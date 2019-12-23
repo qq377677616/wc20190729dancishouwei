@@ -1,0 +1,7 @@
+var twoClass = function(item){
+  return [1,3,5].indexOf(item)
+}
+
+module.exports = {
+  twoClass: twoClass,
+};

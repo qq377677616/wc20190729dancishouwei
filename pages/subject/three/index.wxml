@@ -1,0 +1,34 @@
+<!--pages/subject/three/index.wxml-->
+<view class="three-bg" style='background-image: url("{{datas.city_pic}}")'>
+    <topic-herd datas="{{datas}}"></topic-herd>
+    <!-- 答对答错音频播放 -->
+    <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+    <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <member wx:if="{{datas.user.is_ball}}"></member>
+    <view class="topic-box">
+        <view class="{{datas.answer[0].isY==1?datas.answer[0].color:datas.answer[0].isY==2?'no':''}} {{datas.answer[0].ischeck?'bor':''}}" data-index="0" bindtap="select"><text class="{{datas.answer[0].istip?'font':''}}">{{datas.answer[0].txt}}</text></view>
+        <view class="{{datas.answer[1].isY==1?datas.answer[1].color:datas.answer[1].isY==2?'no':''}} {{datas.answer[1].ischeck?'bor':''}}" data-index="1" bindtap="select"><text class="{{datas.answer[1].istip?'font':''}}">{{datas.answer[1].txt}}</text></view>
+        <view class="{{datas.answer[2].isY==1?datas.answer[2].color:datas.answer[2].isY==2?'no':''}} {{datas.answer[2].ischeck?'bor':''}}" data-index="2" bindtap="select"><text class="{{datas.answer[2].istip?'font':''}}">{{datas.answer[2].txt}}</text></view>
+        <view class="{{datas.answer[3].isY==1?datas.answer[3].color:datas.answer[3].isY==2?'no':''}} {{datas.answer[3].ischeck?'bor':''}}" data-index="3" bindtap="select"><text class="{{datas.answer[3].istip?'font':''}}">{{datas.answer[3].txt}}</text></view>
+        
+        <view class="sun">
+          <image class="center" src="{{resourcesUrl}}page17_20.png"></image>
+           <image class="petal i-0 {{hum>0?'':'on'}}" src="{{resourcesUrl}}page17_12.png"/> 
+           <image class="petal i-1 {{hum>1?'':'on'}}" src="{{resourcesUrl}}page17_12.png"/>
+           <image class="petal i-2 {{hum>2?'':'on'}}" src="{{resourcesUrl}}page17_12.png"/>
+           <image class="petal i-3 {{hum>3?'':'on'}}" src="{{resourcesUrl}}page17_12.png"/>
+           <image class="petal i-4 {{hum>4?'':'on'}}" src="{{resourcesUrl}}page17_12.png"/> 
+           <image class="petal i-5 {{hum>5?'':'on'}}" src="{{resourcesUrl}}page17_12.png"/>
+           <image class="petal i-6 {{hum>6?'':'on'}}" src="{{resourcesUrl}}page17_12.png"/>
+           <image class="petal i-7 {{hum>7?'':'on'}}" src="{{resourcesUrl}}page17_12.png"/>
+        </view>
+        <view class="{{datas.answer[4].isY==1?datas.answer[4].color:datas.answer[4].isY==2?'no':''}} {{datas.answer[4].ischeck?'bor':''}}" data-index="4" bindtap="select"><text class="{{datas.answer[4].istip?'font':''}}">{{datas.answer[4].txt}}</text></view>
+        <view class="{{datas.answer[5].isY==1?datas.answer[5].color:datas.answer[5].isY==2?'no':''}} {{datas.answer[5].ischeck?'bor':''}}" data-index="5" bindtap="select"><text class="{{datas.answer[5].istip?'font':''}}">{{datas.answer[5].txt}}</text></view>
+        <view class="{{datas.answer[6].isY==1?datas.answer[6].color:datas.answer[6].isY==2?'no':''}} {{datas.answer[6].ischeck?'bor':''}}" data-index="6" bindtap="select"><text class="{{datas.answer[6].istip?'font':''}}">{{datas.answer[6].txt}}</text></view>
+        <view class="{{datas.answer[7].isY==1?datas.answer[7].color:datas.answer[7].isY==2?'no':''}} {{datas.answer[7].ischeck?'bor':''}}" data-index="7" bindtap="select"><text class="{{datas.answer[7].istip?'font':''}}">{{datas.answer[7].txt}}</text></view>
+    </view>
+    <view class="tips">
+      <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
+    </view>
+    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips>
+</view>

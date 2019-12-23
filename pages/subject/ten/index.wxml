@@ -1,0 +1,46 @@
+<!--pages/subject/ten/index.wxml-->
+<view class="ten-bg" style='background-image: url("{{datas.city_pic}}")'>
+    <!-- 公共头部组件 -->
+    <topic-herd datas="{{datas}}"></topic-herd> 
+    <!-- 充值弹窗组件 -->
+    <member wx:if="{{datas.user.is_ball}}"></member>
+    <!-- 答对答错音频播放 -->
+    <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+    <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <view class="boxs" bindtap="closes" wx:if="{{imgUrl}}">
+      <image mode="widthFix" style="height:auto;" src="{{imgUrl}}"></image>
+    </view>
+    <view class="topic-box">
+        <view class="topic-box-top">
+            <view wx:for="{{datas.question}}" wx:key="{{index}}"><image style="height:auto;" mode="widthFix" src="{{item.pic}}" data-url="{{item.pic}}" bindtap="click"></image></view>
+            <!-- <view><image src="https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/subject/one/page7_3.png"></image></view>
+            <view><image src="https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/subject/one/page7_3.png"></image></view> -->
+        </view>
+        <view class="topic-box-content">
+            <view wx:for="{{contents}}" wx:key="{{index}}">
+                <view><text>{{item}}</text></view>
+            </view>
+            <!-- <view>
+                <view><text>2</text></view>
+            </view>
+            <view>
+                <view><text>3</text></view>
+            </view> -->
+        </view>
+        <view class="topic-box-bottom">
+            <view class="{{item.isY==1?'yes':item.isY==2?'no':''}} {{item.isTip?'font':''}}" wx:for="{{datas.answer}}" wx:key="{{index}}" data-index="{{index}}" bindtap="select">{{item.answer}}</view>
+            <!-- <view>2.The pencil is on the table , the book is no the table. Tom is good</view>
+            <view>3.The pencil is on the table , the book is no the table. Tom is goodasdasdasdasdasdasdasdasdasdasdasdasdasdasd</view> -->
+        </view>
+    </view>
+    <view class="tips">
+      <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
+    </view>
+    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="2"></tips>
+    <view class="zhe" wx:if="{{isShows}}"></view>
+    <view class="popup" wx:if="{{isShows}}">
+      <image class="voice" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}voice.png" catchtap="plays"></image>
+      <audio src="{{audios}}" id="myAudios3" controls hidden="{{true}}"></audio>
+      <view class="btn" catchtap="close"></view>
+    </view>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/subject/six/index.wxml-->
+<view class="six-bg" style='background-image: url("{{datas.city_pic}}")'>
+    <!-- 公共头部组件 -->
+    <topic-herd datas="{{datas}}"></topic-herd> 
+    <!-- 充值弹窗组件 -->
+    <member wx:if="{{datas.user.is_ball}}"></member>
+    <!-- 答对答错音频播放 -->
+    <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+    <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <view class="boxs" bindtap="closes" wx:if="{{imgUrl}}">
+      <image mode="widthFix" style="height:auto;" src="{{imgUrl}}"></image>
+    </view>
+    <view class="topic-box">
+        <view class="topic-box-top">
+            <view><image style="height:auto;" mode="widthFix" src="{{datas.question.pic1}}" data-url="{{datas.question.pic1}}" bindtap="click"></image></view>
+            <view><image style="height:auto;" mode="widthFix" src="{{datas.question.pic2}}" data-url="{{datas.question.pic1}}" bindtap="click"></image></view>
+            <view><image style="height:auto;" mode="widthFix" src="{{datas.question.pic3}}" data-url="{{datas.question.pic1}}" bindtap="click"></image></view>
+        </view>
+        <view class="topic-box-bottom">
+            <view class="air">
+                <view wx:for="{{contents}}" wx:key="{{index}}">{{item}}</view>
+            </view>
+            <view class="select-btn">
+                <view wx:for="{{datas.answer}}" wx:key="{{index}}" data-index="{{index}}" bindtap="select">
+                    <view class="{{arrs[index]==1?'yes':arrs[index]==2?'no':''}}">{{item}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tips">
+      <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
+    </view>
+    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips>
+</view>

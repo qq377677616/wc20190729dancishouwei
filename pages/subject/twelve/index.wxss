@@ -1,0 +1,117 @@
+/* pages/subject/twelve/index.wxss */
+.twelve-bg{
+    background-size: 100% 100%;
+    height: 100vh;
+}
+.topic-box{
+    width: calc(100% - 80rpx);
+    /*height: 560rpx;*/
+    background-color: white;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    flex-wrap: wrap;
+    padding:10rpx 10rpx 20rpx 10rpx;
+}
+.topic-box .topic-box-top{
+    background-color: rgb(255, 209, 85);
+    border-radius: 20rpx;
+    margin:10rpx 10rpx 20rpx 10rpx;
+    /* width: calc(100% - 20rpx);
+    height: calc(240rpx - 20rpx); */
+    width: 590rpx;
+    height: 220rpx;
+    text-align: center;
+    color: #f73c44;
+    font-size: 38rpx;
+    font-weight: bold;
+    position: relative;
+}
+.topic-box-top .v1{
+  margin-top: 80rpx;
+}
+.topic-box-top .v2{
+  margin-top: 30rpx;
+}
+.topic-box .topic-box-top > text{
+    line-height: 220rpx;
+}
+.topic-box .topic-box-bottom{
+    display: flex;
+    width: 100%;
+}
+.topic-box .topic-box-bottom view{
+    /* width: calc(100% / 3 - 20rpx); */
+    /* padding: calc(100% / 3 - 20rpx) 0 0; */
+    width: 190rpx;
+    height: 190rpx;
+    background-color: rgb(255, 209, 85);
+    margin: 10rpx;
+    border-radius: 20rpx;
+    position: relative;
+}
+.topic-box .topic-box-bottom view image{
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    left: calc(50% - 50rpx);
+    top: calc(50% - 50rpx);
+}
+#myAudio{
+  display: none;
+}
+.audio-cpt{
+    position: absolute;
+    top: 10rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tips{
+  width: 575rpx;
+  margin: 20rpx auto;
+  text-align: right;
+}
+.tips image{
+  width: 150rpx;
+  animation: floats 1.3s ease-in-out 2.7s infinite alternate;
+}
+@keyframes floats{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+.tran{
+  transform: scale(1.3);
+}
+.font{
+  font-size: 85rpx !important;
+}
+.yes{
+  background: green !important;
+}
+.no{
+  background: red !important;
+}
+.boxs{
+  width: calc(100% - 80rpx);
+  height: 365rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1);
+  background: #fff;
+  position: fixed;
+  top: 25rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.boxs image{
+  max-width: 90% !important;
+  max-height: 90% !important;
+}
+.margin_top{
+  margin-top: 130rpx;
+}

@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<audio src="{{resourcesUrl}}city.mp3" id="myAudios2" controls loop></audio>
+<image class="play" src="{{resourcesUrl}}play.png" hidden="{{!isPlay}}" catchtap="pause"></image>
+<image class="pause" src="{{resourcesUrl}}pause.png" hidden="{{isPlay}}" catchtap="play"></image>
+<!-- 充值弹窗组件 -->
+<!-- <member></member> -->
+<view class="index">
+    <!--  标题三个图片  -->
+    <view class="title">
+        <image src="{{resourcesUrl}}page1_3.png" bindtap="handJumps" data-url="/pages/Achievements/index"/>
+        <image wx:for="{{titles}}"
+               wx:key="{{item}}"
+               src="{{resourcesUrl}}{{item}}.png"/> 
+    </view>
+    <!--  三个按钮  -->
+    <view>
+        <image class="btn"
+               wx:for="{{buttons}}"
+               wx:key="{{index}}"
+               src="{{resourcesUrl}}{{item.icon}}.png"
+               mode="widthFix"
+               data-url="{{item.url}}" 
+               data-id="{{index+1}}"
+               bindtap="handJumps"/>
+    </view>
+</view>
+<!-- 首次进入弹窗 -->
+<!-- <view class="zhe" wx:if="{{isShow}}"></view>
+<view class="popup" wx:if="{{isShow}}">
+  <button class="btns" bindtap="rece"></button>
+</view> -->
+<!-- 背景音乐和背景故事 -->
+<!-- <audio src="{{resourcesUrl}}home.mp3" id="myAudios1" controls></audio>
+<view class="zhes" wx:if="{{isBg}}" style="background-image:url({{resourcesUrl}}homeBg.png);background-size:cover;"></view>
+<view class="skip" wx:if="{{isBg}}" bindtap="skip">跳过</view>
+<view class="cont" wx:if="{{isBg}}">
+  <view class="{{iswel!=index?'opa':''}} {{iswel==index?'opas':''}}" wx:for="{{imgList}}" wx:key="{{index}}">
+    <image mode="widthFix" style="height:auto;" src="{{item.imgUrl}}" wx:if="{{index < 5}}"></image>
+    <view wx:if="{{index == 5}}">{{item.imgUrl}}</view>
+  </view>
+</view> -->
+<view class="fake-authorization" hidden="{{!isAuthorization}}">
+    <view class="content">
+        <view class="header">
+            微信授权
+        </view>
+        <view class="toast">
+            • 请授权以获得更好体验(头像, 昵称)
+        </view>
+        <view class="btn">
+            <text bindtap="handCancel">取消</text>
+            <button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">授权</button>
+        </view>
+    </view>
+</view>

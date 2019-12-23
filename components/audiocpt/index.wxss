@@ -1,0 +1,5 @@
+/* components/audiocpt/index.wxss */
+.audio{
+    width: 60rpx;
+    height: 50rpx;
+}

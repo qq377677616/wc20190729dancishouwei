@@ -1,0 +1,178 @@
+/* pages/subject/eleven/index.wxss */
+.eleven-bg{
+    background-size: 100% 100%;
+    height: 100vh;
+}
+.topic-box{
+    width: calc(100% - 80rpx);
+    height: 625rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1);
+    padding: 20rpx;
+}
+.topic-box >view{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 209, 85);
+    border-radius: 20rpx;
+    position: relative;
+}
+.topic-box >view >view > view{
+    width: 90%;
+    height: 170rpx;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.center{
+  margin: 10rpx auto !important;
+}
+.topic-box >view >view{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.topic-box >view :nth-child(3){
+ margin-top: -20rpx;
+}
+.yes{
+  background: green !important;
+  color: #fff !important;
+}
+.no{
+  background: red !important;
+  color: #fff !important;
+}
+/* .icon-one,.icon-two,.icon-three{
+    width: 140rpx;
+    height: 140rpx;
+    background-color: white;
+    border-radius: 50%;
+} */
+.icons{
+  width: 170rpx;
+  height: 170rpx;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex{
+  width: calc(100% - 170rpx);
+  justify-content: center;
+}
+.contents{
+  height: 80rpx;
+  background-color: white;
+  padding: 0 30rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  color: #f73c44;
+  font-size: 48rpx;
+  letter-spacing: 2rpx;
+  display: flex;
+  align-items: center;
+}
+.icon-one image, .icon-two image, .icon-three image{
+    display: block;
+    width: 80%;
+    max-height: 80%;
+    border-radius: 50%;
+}
+/* .content-one,.content-two,.content-three{
+    line-height: 80rpx;
+    height: 80rpx;
+    background-color: white;
+    padding: 0 30rpx;
+    border-radius: 40rpx;
+    text-align: center;
+    color: #f73c44;
+    font-size: 36rpx;
+} */
+/* .content-one{
+    margin-top: 15rpx;
+    margin-right: 30rpx;
+    transform:rotate(-19deg);
+}
+.icon-two{
+    margin-top: -40rpx;
+}
+.content-two{
+    margin-left: 50rpx;
+    transform:rotate(15deg);
+}
+.icon-three{
+    margin-top: -30rpx;
+}
+.content-three{
+    margin-right: -20rpx;
+    transform:rotate(-12deg);
+} */
+.tips{
+  width: 575rpx;
+  margin: 20rpx auto;
+  text-align: right;
+}
+.tips image{
+  width: 150rpx;
+  animation: floats 1.3s ease-in-out 2.7s infinite alternate;
+}
+@keyframes floats{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+.tran{
+  transform: scale(1.2);
+}
+.font{
+  font-weight: bold;
+  color: #9B88E2 !important;
+}
+.zhe{
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.popup{
+  width: 658rpx;
+  height: 620rpx;
+  background-image: url(https://game.flyh5.cn/resources/game/wechat/szq/danci/images/subject/one/member.png);
+  background-size: cover;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 15;
+}
+.popup .img1{
+  width: 430rpx;
+  position: absolute;
+  bottom: 130rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.popup .img2{
+  width: 430rpx;
+  position: absolute;
+  bottom: 35rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bor{
+  border: 5px solid #9B88E2;
+  box-sizing: border-box;
+}

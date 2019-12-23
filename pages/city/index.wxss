@@ -1,0 +1,115 @@
+/* pages/city/index.wxss */
+.bg{
+    background-size: 100% 100%;
+    height: 100vh;
+}
+.my-city{
+    width: 690rpx;
+    height: 710rpx;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 150rpx auto 0 auto;
+}
+.my-city-header{
+    height: 160rpx;
+    padding-top: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+}
+.avatar-or-name,.star-num{
+    display: flex;
+    align-items: center;
+    padding-top: 20rpx;
+}
+.my-city-header .avatar-or-name{
+    padding-left: 80rpx;
+}
+/* .my-city-header .avatar-or-name > image{
+    height: 120rpx;
+    width: 120rpx;
+    padding-right: 10rpx;
+} */
+.my-city-header .avatar-or-name > .avatarBg{
+    height: 120rpx;
+    width: 106rpx;
+    margin-right: 10rpx;
+    background-size: cover;
+    position: relative;
+}
+.my-city-header .avatar-or-name .avatar{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 29rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.a2,.a5,.a8{
+  top: 36rpx !important;
+}
+.a3,.a6,.a9{
+  top: 32rpx !important;
+}
+.a7,.a10{
+  top: 28rpx !important;
+}
+.my-city-header .avatar-or-name > text{
+    font-size: 28rpx;
+    /*color: ;*/
+}
+.my-city-header .star-num{
+    padding-right: 95rpx;
+}
+.my-city-header .star-num > image{
+    height: 45rpx;
+    width: 50rpx;
+    padding-right: 10rpx;
+}
+.my-city-header .star-num > text{
+    padding-top: 5rpx;
+    font-size: 36rpx;
+    color: #ffd149;
+    font-weight: bold;
+}
+.my-city-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 620rpx;
+    margin: 0 auto;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+.my-city-content ._box{
+    width: 50%;
+    padding-bottom: 10rpx;
+}
+.my-city-content ._box >view{
+    margin: 0 auto;
+    width: 85%;
+    height: 147rpx;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+.my-city-content ._box > image{
+    display: block;
+    margin: 0 auto;
+    padding-top: 10rpx;
+    width: 87rpx;
+    height: 28rpx;
+
+}
+.btns{
+    padding-top: 30rpx;
+}
+.btns image{
+    width: 260rpx;
+    height: 100rpx;
+    display: block;
+    padding-bottom: 6rpx;
+    margin: 0 auto;
+}

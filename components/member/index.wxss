@@ -1,0 +1,104 @@
+.member{
+  width: 100%;
+  height: 100%;
+}
+.zhe{
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.popup{
+  width: 658rpx;
+  height: 620rpx;
+  background-image: url(https://game.flyh5.cn/resources/game/wechat/szq/danci/images/subject/one/member.png);
+  background-size: cover;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 15;
+}
+.popup .img1{
+  width: 430rpx;
+  position: absolute;
+  bottom: 130rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.popup .img2{
+  width: 430rpx;
+  position: absolute;
+  bottom: 35rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dig-member{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    background-color: rgba(0,0,0,.8);
+    z-index: 20;
+}
+.dig-member >view{
+    background-image: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/clearance/page19_14.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 641rpx;
+    height: 500rpx;
+    margin: 341rpx auto 0 auto;
+}
+.dig-member >image{
+    display: block;
+    width: 121rpx;
+    height: 122rpx;
+    margin: 41rpx auto 0 auto;
+}
+.dig-member >view >image{
+    display: block;
+    width: 441rpx;
+    height: 52rpx;
+    margin: 0 auto;
+    padding-top: 70rpx;
+    padding-bottom: 20rpx;
+}
+.description{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 100rpx 15rpx 106rpx;
+    box-sizing: border-box;
+}
+.description >image{
+    width: 155rpx;
+    height: 67rpx;
+}
+.description text{
+  padding-left: 20rpx;
+  color: #fff;
+}
+.month{
+  width: 139rpx;
+  height: 24rpx;
+}
+.btn{
+  width: 154rpx;
+  height: 66rpx;
+  padding-left: 70rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #fff;
+}
+.description view{
+    display: flex;
+    align-items: center;
+}
+.description view >image:nth-child(1){
+    width: 56rpx;
+    height: 45rpx;
+}

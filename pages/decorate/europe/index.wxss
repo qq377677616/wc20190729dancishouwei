@@ -1,0 +1,253 @@
+/* pages/decorate/europe/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.content{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.speed{
+  width: 520rpx;
+  position: relative;
+  top: 220rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.speed .cname{
+  width: 142rpx;
+}
+.speed .jindu{
+  width: 100%;
+  height: 18rpx !important;
+  position: absolute;
+  top: 70rpx;
+  left: 2%;
+}
+.speed .jindus{
+  width: 10%;
+  height: 18rpx !important;
+  position: absolute;
+  top: 70rpx;
+  left: 2%;
+  z-index: 1;
+}
+.per{
+  margin-top: 70rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-shadow: 1px 2px 1px #6195ef;
+  text-align: right;
+}
+.speed .completed{
+  width: 120rpx;
+  vertical-align: middle;
+}
+/* 云和飞行物 */
+.yun1{
+  width: 190rpx;
+  position: absolute;
+  top: 400rpx;
+  left: 0;
+}
+.yun2{
+  width: 128rpx;
+  position: absolute;
+  top: 400rpx;
+  right: 0;
+  z-index: 1;
+}
+.a44{
+  width: 176rpx;
+  position: absolute;
+  top: 475rpx;
+  left: 80rpx;
+  z-index: 1;
+}
+.a32{
+  width: 186rpx;
+  position: absolute;
+  top: 390rpx;
+  right: 83rpx;
+}
+/* 建筑物 */
+.a27{
+  width: 164rpx;
+  position: absolute;
+  left: 0;
+  bottom: 240rpx;
+  z-index: 1;
+}
+.a25{
+  width: 405rpx;
+  position: absolute;
+  left: 0;
+  bottom: 240rpx;
+}
+.a37{
+  width: 65rpx;
+  position: absolute;
+  left: 250rpx;
+  bottom: 240rpx;
+}
+.a28{
+  width: 153rpx;
+  position: absolute;
+  left: 335rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+.a23{
+  width: 163rpx;
+  position: absolute;
+  left: 405rpx;
+  bottom: 240rpx;
+}
+.a26{
+  width: 255rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+.a24{
+  width: 153rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 240rpx;
+}
+/* 四棵树 */
+.a30{
+  width: 30rpx;
+  position: absolute;
+  left: 10rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+.s2{
+  width: 40rpx;
+  position: absolute;
+  left: 35rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+.s3{
+  width: 25rpx;
+  position: absolute;
+  left: 375rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+.s4{
+  width: 30rpx;
+  position: absolute;
+  left: 395rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+/* 两堆草 */
+.cao1{
+  width: 257rpx;
+  position: absolute;
+  left: 0;
+  bottom: 240rpx;
+  z-index: 2;
+}
+.a38{
+  width: 145rpx;
+  position: absolute;
+  right: 0;
+  bottom: 240rpx;
+  z-index: 2;
+}
+/* 牛 */
+.a29{
+  width: 140rpx;
+  position: absolute;
+  left: 75rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+/* 球 */
+.a43{
+  width: 57rpx;
+  position: absolute;
+  right: 56rpx;
+  bottom: 230rpx;
+  z-index: 4;
+}
+/* 人物 */
+.a41{
+  width: 65rpx;
+  position: absolute;
+  left: 50rpx;
+  bottom: 224rpx;
+  z-index: 4;
+}
+.a42{
+  width: 110rpx;
+  position: absolute;
+  left: 203rpx;
+  bottom: 224rpx;
+  z-index: 4;
+}
+.a39{
+  width: 104rpx;
+  position: absolute;
+  right: 204rpx;
+  bottom: 224rpx;
+  z-index: 4;
+}
+.a40{
+  width: 45rpx;
+  position: absolute;
+  right: 150rpx;
+  bottom: 224rpx;
+  z-index: 4;
+}
+/* 马路 */
+.footer{
+  width: 100%;
+  height: 240rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-size: cover;
+}
+.a36{
+  width: 150rpx;
+  position: absolute;
+  left: 38rpx;
+  bottom: 116rpx;
+  z-index: 5;
+}
+.a35{
+  width: 105rpx;
+  position: absolute;
+  left: 203rpx;
+  bottom: 30rpx;
+  z-index: 5;
+}
+.a34{
+  width: 115rpx;
+  position: absolute;
+  right: 190rpx;
+  bottom: 20rpx;
+  z-index: 5;
+}
+.a33{
+  width: 136rpx;
+  position: absolute;
+  right: 45rpx;
+  bottom: 113rpx;
+  z-index: 5;
+}
+.back{
+  width: 250rpx;
+  position: absolute;
+  top: 18rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}

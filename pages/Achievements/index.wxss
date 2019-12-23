@@ -1,0 +1,284 @@
+/* pages/Achievements/index.wxss */
+.showy{
+    background-image: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_10.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 144rpx;
+    height: 85rpx;
+    position: fixed;
+    right: 0;
+    bottom: 550rpx;
+}
+.achievements-content{
+    background-image: url('https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_2.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 686rpx;
+    height: 754rpx;
+    margin: 20% auto 0 auto;
+}
+.achievements-content .achievements-content-herd{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 160rpx 110rpx 0 60rpx;
+    box-sizing: border-box;
+}
+.achievements-content .achievements-content-herd >view:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.achievements-content .achievements-content-herd :nth-child(1) .avatar{
+    width: 136rpx;
+    height: 145rpx;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.avatar image{
+    position: absolute;
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    left: 50%;
+    top: 37rpx;
+    transform: translateX(-50%);
+}
+.a2,.a5,.a8{
+  top: 50rpx !important;
+}
+.a3,.a6{
+  top: 43rpx !important;
+}
+.a4,.a7,.a10{
+  top: 38rpx !important;
+}
+.a9{
+  top: 45rpx !important;
+}
+.achievements-content .achievements-content-herd >view:nth-child(1) text{
+    display: block;
+    font-size: 26rpx;
+
+}
+.achievements-content .achievements-content-herd >view:nth-child(2){
+    width: 103rpx;
+    height: 104rpx;
+    background-image: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_6.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.achievements-content .achievements-content-herd >view:nth-child(2) image{
+    display: block;
+    width: 50%;
+    height: 60%;
+    margin-top: calc(50% - 30%);
+    margin-left: calc(50% - 22%);
+}
+.achievements-content-info{
+    padding: 0 120rpx 0 60rpx;
+}
+.achievements-content-info .info-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 90rpx;
+    border-bottom:2px #d1e0fc solid;
+    font-size: 28rpx;
+}
+.achievements-content-info .info-box > view{
+    display: flex;
+    align-items: center;
+}
+.achievements-content-info .info-box > view image{
+    width: 57rpx;
+    height: 58rpx;
+}
+.achievements-content-info .info-box > view text{
+
+    color: #3478df;
+    padding-left: 10rpx;
+}
+.achievements-content-star{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 150rpx;
+    font-size: 36rpx;
+    color: #ffd149;
+    font-weight: bold;
+    padding: 0 120rpx 0 60rpx;
+}
+.achievements-content-star image{
+    width: 75rpx;
+    height: 75rpx;
+}
+.achievements-content-star text{
+  font-size: 45rpx;
+  -webkit-text-stroke:1px white;
+}
+.achievements-content-info .info-box .percentage{
+    text-align: center;
+    color: #3478df;
+    width: 100%;
+}
+.data{
+    color: #ff9a82;
+    font-weight: bold;
+}
+._info{
+    padding-left: 10rpx;
+}
+._info text:nth-child(1){
+    color: #3478df;
+}
+._info text:nth-child(2){
+    color: #ffd149;
+}
+.achievements-btn{
+    width: 100%;
+    padding-top: 10%;
+}
+.achievements-btn image{
+    margin: 0 auto;
+    display: block;
+    width: 258rpx;
+    height: 94rpx;
+    padding-bottom: 20rpx;
+}
+
+.msg-box{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.75);
+}
+.msg-box > view:nth-child(1){
+    background: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_14.png") no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    width: 691rpx;
+    height: 711rpx;
+    margin: 20% auto 0 auto;
+    padding: 200rpx 110rpx 40rpx 110rpx;
+}
+.msg-box > view .mas-box-herd >view:nth-child(1){
+    position: relative;
+}
+.msg-box .mas-box-herd{
+
+}
+.msg-box .mas-box-herd .progress{
+    background: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_30.png") no-repeat;
+    background-size:466rpx 17rpx;
+    height: 17rpx;
+    width: 466rpx;
+    position: relative;
+}
+.msg-box .mas-box-herd .progress view{
+    background-image: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_331.png");
+    background-size:466rpx 17rpx;
+    background-position:left center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.msg-box .mas-box-herd >view:nth-child(1) image{
+    position: absolute;
+    right: 0;
+    top: -12rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+.msg-box .mas-box-herd .date{
+    padding-top: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.msg-box .mas-box-herd .date image{
+    width: 65rpx;
+    height: 32rpx;
+}
+.msg-box .check-box{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.msg-box .check-box image{
+    width: 147rpx;
+    height: 133rpx;
+    margin-top: 10rpx;
+}
+.day-7{
+    width: 100% !important;
+    height: 120rpx !important;
+    /*width: 100%;*/
+}
+.myCanvas{
+  opacity: 0;
+  width: 100%;
+  height: 100% !important;
+  position: fixed;
+  top: 100%;
+  left: 100%;
+  z-index: 1000;
+}
+#myCanvas{
+  width: 574px;
+  height: 1022px;
+  position: fixed;
+  left: 100%;
+  top: 0;
+}
+.save{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mark{
+  width: 40rpx;
+}
+.popup{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  opacity: 0.6;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.box{
+  width: 500rpx;
+  background: #fff;
+  border-radius: 18rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: myfirst1 .5s;
+	animation-fill-mode: forwards;
+}
+.box .img{
+  display: flex;
+  align-items: center;
+  padding: 10rpx 15rpx;
+}
+.box .img image{
+  width: 120rpx;
+}
+@keyframes myfirst1{
+  from {transform: translate(-50%,-50%) scale(0);}
+  to {transform: translate(-50%,-50%) scale(1);}
+}

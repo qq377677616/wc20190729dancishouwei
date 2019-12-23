@@ -1,0 +1,100 @@
+<!--pages/station/index.wxml-->
+<view class="bg" style="background-image: url({{resourcesUrl}}page22_jpg.jpg)">
+    <view class="my-station" style="background-image: url({{resourcesUrl}}page22_3.png)">
+        <view>
+            <view class="my-station-header">
+                <!--         头像名字       -->
+                <view class="avatar-or-name">
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k1.png)" wx:if="{{datas.user.levelid==1}}">
+                      <image class="avatar a1" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k2.png)" wx:if="{{datas.user.levelid==2}}">
+                      <image class="avatar a2" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k3.png)" wx:if="{{datas.user.levelid==3}}">
+                      <image class="avatar a3" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k4.png)" wx:if="{{datas.user.levelid==4}}">
+                      <image class="avatar a4" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k5.png)" wx:if="{{datas.user.levelid==5}}">
+                      <image class="avatar a5" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k6.png)" wx:if="{{datas.user.levelid==6}}">
+                      <image class="avatar a6" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k7.png)" wx:if="{{datas.user.levelid==7}}">
+                      <image class="avatar a7" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k8.png)" wx:if="{{datas.user.levelid==8}}">
+                      <image class="avatar a8" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k9.png)" wx:if="{{datas.user.levelid==9}}">
+                      <image class="avatar a9" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <view class="avatarBg" style="background-image: url({{resourcesUrl}}k10.png)" wx:if="{{datas.user.levelid==10}}">
+                      <image class="avatar a10" src="{{datas.user.avatarurl}}"></image>
+                    </view>
+                    <text>{{datas.user.nickname}}</text>
+                </view>
+                <!--       star-数量         -->
+                <view class="star-num">
+                    <image src="{{resourcesUrl}}page20_20.png"></image>
+                    <text>{{datas.user.star}}</text>
+                </view>
+            </view>
+            <!--         六个选项       -->
+            <scroll-view class="scrolls" scroll-y lower-threshold="100" bindscrolltolower="scroll">
+              <view class="my-station-content">
+                <view class="_box" wx:for="{{datas.list}}" wx:key="{{item}}">
+                    <view style="background-image: url({{resourcesUrl}}page22_9.png)">
+                        <!-- <image src="{{resourcesUrl}}{{item}}"></image> -->
+                        <image src="{{item.decorate_yes}}" wx:if="{{item.type == 2}}"></image>
+                        <image src="{{item.decorate_yes}}" wx:if="{{item.type == 1 || item.type == 3}}" style="-webkit-filter: grayscale(100%);-webkit-filter: grayscale(1);filter: grayscale(100%);filter: gray;"></image>
+                        <view>
+                            <image src="{{resourcesUrl}}page22_5.png"></image>
+                            <text>{{item.star}}</text>
+                        </view>
+                    </view>
+                    <!--        彩色按钮        -->
+                    <image src="{{resourcesUrl}}page22_10.png"
+                           bindtap="pleaseConfirm"
+                           data-id="{{item.id}}"
+                           data-index="{{index}}"
+                           data-url="{{item.decorate_yes}}" wx:if="{{item.type == 3}}">
+                    </image>
+                    <!--        灰色按钮        -->
+                    <image src="{{resourcesUrl}}page22_8.png" wx:if="{{item.type == 1 || item.type == 2}}"> </image>
+                </view>
+              </view>
+            </scroll-view>
+        </view>
+        <!--        Back按钮      -->
+        <view class="btn">
+            <image src="{{resourcesUrl}}page2_12.png" bindtap="back"></image>
+        </view>
+    </view>
+    <!--    弹窗    -->
+    <view class="message-Box" hidden="{{!isShowMsgBox.std}}">
+        <view style="background-image: url({{resourcesUrl}}page22_30.png)" class="fadeShow">
+            <!--      选中内容 提示      -->
+            <view class="message-Box-herd">
+                <view>
+                    <text>User 3</text>
+                    <image class="xing" src="{{resourcesUrl}}page20_20.png"></image> 
+                    <text>to help!</text>
+                </view>
+                <image class="shop" src="{{isShowMsgBox.img}}"></image>
+            </view>
+            <!--      弹窗按钮 YSE NO      -->
+            <view class="message-Box-btn">
+                <view>
+                    <image src="{{resourcesUrl}}page22_31.png" bindtap="shutDown"></image>
+                </view>
+                <view>
+                    <image src="{{resourcesUrl}}page22_32.png" bindtap="play"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

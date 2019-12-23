@@ -1,0 +1,203 @@
+/* pages/station/index.wxss */
+
+.bg{
+    background-size: 100% 100%;
+    height: 100vh;
+}
+.my-station{
+    width: 690rpx;
+    height: 810rpx;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 160rpx auto 0 auto;
+}
+.my-station-header{
+    height: 180rpx;
+    padding-top: 160rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+
+}
+.avatar-or-name,.star-num{
+    display: flex;
+    align-items: center;
+    padding-top: 20rpx;
+}
+.my-station-header .avatar-or-name{
+    padding-left: 80rpx;
+}
+.my-station-header .avatar-or-name > .avatarBg{
+    height: 120rpx;
+    width: 120rpx;
+    margin-right: 10rpx;
+    background-size: cover;
+    position: relative;
+}
+.my-station-header .avatar-or-name .avatar{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.a2,.a5,.a8{
+  top: 40rpx !important;
+}
+.a3,.a6,.a9{
+  top: 35rpx !important;
+}
+.a7,.a10{
+  top: 30rpx !important;
+}
+.my-station-header .avatar-or-name > text{
+    font-size: 28rpx;
+    /*color: ;*/
+}
+.my-station-header .star-num{
+    padding-right: 95rpx;
+}
+.my-station-header .star-num > image{
+    height: 45rpx;
+    width: 50rpx;
+    padding-right: 10rpx;
+}
+.my-station-header .star-num > text{
+    padding-top: 5rpx;
+    font-size: 36rpx;
+    color: #ffd149;
+    font-weight: bold;
+}
+.scrolls{
+  height: 428rpx;
+}
+.my-station-content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 620rpx;
+    height: 428rpx;
+    margin: 0 auto;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+.my-station-content ._box{
+    width: calc(100% / 3);
+    padding-bottom: 10rpx;
+}
+.my-station-content ._box >view{
+    margin: 0 auto;
+    width: 85%;
+    height: 147rpx;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.my-station-content ._box >view >image{
+    width: 59rpx;
+    height: 54rpx;
+    position: absolute;
+    top:30rpx;
+    left: calc(50% - 28.5rpx);
+}
+.my-station-content ._box >view >view{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 6rpx;
+    color: #ffd149;
+    font-weight: bold;
+    font-size: 24rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.my-station-content ._box >view >view >image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.my-station-content ._box > image{
+    display: block;
+    margin: 0 auto;
+    padding-top: 10rpx;
+    width: 118rpx;
+    height: 48rpx;
+
+}
+.btn{
+    padding: 100rpx;
+}
+.btn image{
+    width: 260rpx;
+    height: 100rpx;
+    display: block;
+    padding-bottom: 20rpx;
+    margin: 0 auto;
+}
+
+.message-Box{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.8);
+}
+.message-Box > view{
+    position: fixed;
+    top: calc(50% - 210.5rpx);
+    left: calc(50% - 272rpx);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 544rpx;
+    height: 421rpx;
+}
+.message-Box > view .message-Box-btn{
+    position: absolute;
+    bottom: 20rpx;
+    height: 83rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+.message-Box > view .message-Box-btn view{
+    width: 50%;
+}
+.message-Box > view .message-Box-btn view image{
+    display: block;
+    width: 189rpx;
+    height: 83rpx;
+    margin: 0 auto;
+}
+.message-Box > view .message-Box-herd{
+    position: absolute;
+    top: 60rpx;
+    width: 63%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.message-Box > view .message-Box-herd view{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+.message-Box > view .message-Box-herd view text{
+    padding-bottom: 30rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+    color: white;
+}
+.message-Box > view .message-Box-herd .xing{
+    width: 40rpx;
+    height: 40rpx;
+}
+.message-Box > view .message-Box-herd .shop{
+    display: block;
+    margin: 0 auto;
+    width: 141rpx;
+    height: 128rpx;
+}

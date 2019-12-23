@@ -1,0 +1,37 @@
+<!--pages/subject/one/index.wxml-->
+<view class='one-bg' style='background-image: url("{{datas.city_pic}}")'>
+    <!-- 公共头部组件 -->
+    <topic-herd datas="{{datas}}"></topic-herd> 
+    <!-- 充值弹窗组件 -->
+    <member wx:if="{{datas.user.is_ball}}"></member>
+    <!-- 答对答错音频播放 -->
+    <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+    <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <audio src="{{datas.question.muc}}" id="myAudio" controls></audio>
+    <audio src="{{item.muc}}" id="myAudio{{index}}" controls wx:for="{{datas.answer}}" wx:key="{{index}}"></audio>
+    <view class="boxs" bindtap="closes" wx:if="{{imgUrl}}">
+      <image mode="widthFix" style="height:auto;" src="{{imgUrl}}"></image>
+    </view>
+    <view class="topic-box">
+        <view class="top">
+            <image class="description" mode="widthFix" src="{{datas.question.pic}}" data-url="{{datas.question.pic}}" bindtap="click"></image>
+            <!-- <text class="air">{{activeValue}}</text> -->
+            <text class="prompt">{{datas.question.txt}}</text> 
+            <view class="audio-cpt" catchtap="tmAudio">
+                <audio-cpt></audio-cpt>
+            </view>
+        </view>
+        <view class="bt-footer">
+            <view class="{{item.isY==1?'yes':item.isY==2?'no':''}}" wx:for="{{datas.answer}}" data-index="{{index}}" catchtap="selectWord" data-value="{{item.pic}}" wx:key="item">
+                <text class="{{index == _index?'font':''}}">{{item.pic}}</text>
+                <view class="one-audio-cpt" data-index="{{index}}" catchtap="setAudioUrl">
+                    <audio-cpt audioUrl="{{audioUrl}}"></audio-cpt>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tips">
+      <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
+    </view>
+    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="2"></tips>
+</view>

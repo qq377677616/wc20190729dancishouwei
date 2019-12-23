@@ -1,0 +1,21 @@
+<!-- 非洲模块 -->
+<view>
+         <scroll-view scroll-x scroll-y scroll-left="{{leftWidth}}">
+            <!-- 背景音乐 -->
+            <audio src="{{resourcesUrl}}city.mp3" id="myAudios2" controls loop></audio>
+               <image class="bg-img" src="{{resourcesUrl}}beimei.png" mode="widthFix"/>
+               <image id="point{{key}}" class="aircraft {{key === 0 ? 'point' : 'position-' + key}} {{leftOrRightClass}}" src="{{resourcesUrl}}page5_21.png" mode="widthFix" />
+               <view class="ul">
+                     <view class="li li-{{index}}" wx:for="{{cityList}}" data-index="{{index}}" data-id="{{item.id}}"
+                  wx:key="{{index+1}}" bindtap="passThrough">
+                        <view class="left">
+                          <image id="icon{{index}}" mode="widthFix" class="icon" src="{{resourcesUrl}}page5_13.png"/>
+                        </view>
+                        <view class="right">
+                          <text>{{item.k}} {{item.city}}</text>
+                        </view>
+                           <!-- <image class="title" src="{{resourcesUrl}}{{item}}"/> -->
+                     </view>
+               </view>
+         </scroll-view>
+</view>

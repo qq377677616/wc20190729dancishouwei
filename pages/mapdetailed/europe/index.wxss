@@ -1,0 +1,158 @@
+scroll-view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/map-africa/ouzhou.png");
+  background-size: cover;
+}
+
+.bg-img {
+  position: absolute;
+  width: 1173rpx;
+  left: 0;
+  top: 0;
+}
+
+.aircraft {
+  position: absolute;
+  width: 111rpx;
+  left: 510rpx;
+  top: 246rpx;
+}
+
+.ul .li {
+  height: 40rpx;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.ul .li text{
+  display: inline-block;
+  width: 350rpx;
+  font-size: 24rpx;
+  color: #fff;
+  padding-left: 10rpx;
+}
+.ul .li .icon {
+  width: 40rpx;
+  /* height: 35rpx; */
+  padding-right: 10rpx;
+  animation: floats 1.6s ease-in-out 2.9s infinite alternate;
+}
+@keyframes floats{
+  0%   {transform:translate(0,-2px)}
+  100% {transform:translate(0,6rpx)}
+}
+.ul .li .title {
+  height: 32rpx;
+}
+
+.li-0 {
+  left: 440rpx;
+  top: 368rpx;
+}
+
+.li-0 .title {
+  width: 177rpx;
+}
+
+.li-1 {
+  left: 773rpx;
+  top: 311rpx;
+}
+
+.li-1 .title {
+  width: 239rpx;
+}
+
+.li-2 {
+  left: 945rpx;
+  top: 437rpx;
+}
+
+.li-2 .title {
+  width: 155rpx;
+}
+
+.li-3 {
+  left: 890rpx;
+  top: 531rpx;
+}
+
+.li-3 .title {
+  width: 167rpx;
+}
+
+.li-4 {
+  left: 525rpx;
+  top: 546rpx;
+}
+
+.li-4 .title {
+  width: 177rpx;
+}
+
+.li-5 {
+  left: 387rpx;
+  top: 480rpx;
+}
+
+.li-5 .title {
+  width: 138rpx;
+}
+
+.li-6 {
+  left: 57rpx;
+  top: 682rpx;
+}
+
+.li-6 .title {
+  width: 175rpx;
+}
+
+.li-7 {
+  left: 741rpx;
+  top: 631rpx;
+}
+
+.li-7 .title {
+  width: 165rpx;
+}
+
+.li-8 {
+  left: 520rpx;
+  top: 792rpx;
+}
+
+.li-8 .title {
+  width: 145rpx;
+}
+
+.li-9 {
+  left: 728rpx;
+  top: 997rpx;
+}
+
+.li-9 .title {
+  width: 165rpx;
+}
+.init{
+  transform: rotateY(180deg);
+}
+.position-right{
+    transition: left 2s linear,top 2s linear;
+}
+.position-left{
+    transition: left 2s linear,top 2s linear; transform: rotateY(180deg) !important;
+}
+.aircraft.position-1{left:705rpx;top:230rpx;}
+.aircraft.position-2{left:860rpx;top:360rpx;}
+.aircraft.position-3{left:795rpx;top:450rpx;}
+.aircraft.position-4{left:640rpx;top:450rpx;}
+.aircraft.position-5{left:510rpx;top:380rpx;}
+.aircraft.position-6{left:130rpx;top:570rpx;} 
+.aircraft.position-7{left:630rpx;top:570rpx;}
+.aircraft.position-8{left:600rpx;top:680rpx;}
+.aircraft.position-9{left:800rpx;top:900rpx;}

@@ -1,0 +1,154 @@
+/* pages/subject/fives/index.wxss */
+.fives-bg{
+    background-size: 100% 100%;
+    height: 100vh;
+}
+.topic-box{
+    width: calc(100% - 80rpx);
+    height: 560rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1)
+}
+#myAudio{
+  display: none;
+}
+.yes{
+  background: green !important;
+}
+.no{
+  background: red !important;
+  color: #fff !important;
+}
+.topic-box .topic-box-top{
+    margin: 20rpx;
+    border-radius: 20rpx;
+    height: calc(40% - 40rpx);
+    width: calc(100% - 40rpx);
+    background-color: rgb(255, 209, 85);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.img{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.topic-box .topic-box-top .description{
+    padding-left: 40rpx;
+    width: 85rpx;
+    max-height: 100% !important;
+}
+.descs{
+  padding-left: 20rpx !important;
+  width: 75rpx !important;
+}
+.topic-box .topic-box-top .air{
+    padding-top: 50rpx;
+    flex: 1;
+    display: flex;
+}
+.topic-box .topic-box-top .air view{
+    color: #f73c44;
+    font-size: 40rpx;
+    text-align: center;
+    margin-left: 20rpx;
+    border-bottom:5rpx #f73c44 solid;
+    width: 50rpx;
+    height: 60rpx;
+    line-height: 55rpx;
+    box-sizing: border-box;
+}
+.afters{
+  font-size: 32rpx !important;
+  margin-left: 6rpx !important;
+  width: 28rpx !important;
+  height: 60rpx !important;
+  line-height: 55rpx !important;
+}
+
+.topic-box .topic-box-bottom{
+    border-radius: 20rpx;
+    margin: 20rpx;
+    height: calc(60% - 20rpx);
+    width: calc(100% - 40rpx);
+    background-color: rgb(255, 209, 85);
+}
+.topic-box .topic-box-bottom >view{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.topic-box .topic-box-bottom >view > view{
+    width: calc(100% / 4);
+    padding: calc(90% / 4) 0 0;
+    position: relative;
+}
+.topic-box .topic-box-bottom >view > view >view {
+    position: absolute;
+    /* background-image: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/subject/one/page11_4.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; */
+    top: 15rpx;
+    right: 15rpx;
+    left: 15rpx;
+    bottom: 15rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f73c44;
+    background: #fff;
+    border-radius: 50%;
+}
+
+
+.audio-cpt{
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+}
+.tips{
+  width: 575rpx;
+  margin: 20rpx auto;
+  text-align: right;
+}
+.tips image{
+  width: 150rpx;
+  animation: floats 1.3s ease-in-out 2.7s infinite alternate;
+}
+@keyframes floats{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+.isTip{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.boxs{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: myfirst1 .4s;
+	animation-fill-mode: forwards;
+}
+.boxs image{
+  max-width: 90% !important;
+  max-height: 90% !important;
+}
+@keyframes myfirst1{
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}

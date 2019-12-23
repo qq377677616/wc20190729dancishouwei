@@ -1,0 +1,193 @@
+/* pages/map/index.wxss */
+scroll-view{
+    width:100%;
+    height:100% !important;
+    position: absolute;
+    left:0;
+    top:0;
+    font-size: 0;
+    background: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/map-africa/ouzhou.png");
+    background-size: cover;
+}
+.map-bg{
+    width:2572rpx;
+    position: absolute;
+    left:0;
+    top:200rpx;
+}
+/* 气球 */
+.q1{
+  width: 36rpx;
+  position: absolute;
+  top: 185rpx;
+  left: 95rpx;
+  animation: float1 1.3s ease-in-out 2.7s infinite alternate;
+} 
+@keyframes float1{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+.q2{
+  width: 65rpx;
+  position: absolute;
+  top: 340rpx;
+  left: 145rpx;
+  animation: float2 1.6s ease-in-out 3s infinite alternate;
+}
+@keyframes float2{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+.q3{
+  width: 44rpx;
+  position: absolute;
+  top: 440rpx;
+  left: 2363rpx;
+  animation: float3 1.3s ease-in-out 2.7s infinite alternate;
+}
+@keyframes float3{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+.q4{
+  width: 70rpx;
+  position: absolute;
+  top: 575rpx;
+  left: 2285rpx;
+  animation: float4 1.6s ease-in-out 3s infinite alternate;
+}
+@keyframes float4{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+/* unlocked */
+.unlocked1{
+  width: 222rpx;
+  position: absolute;
+  top: 1210rpx;
+  left: 1020rpx;
+}
+.unlocked2{
+  width: 222rpx;
+  position: absolute;
+  top: 1070rpx;
+  left: 2260rpx;
+}
+.trajectory{
+    width:1670rpx;
+    position: absolute;
+    left:300rpx;
+    top:155rpx;
+}
+.back{
+    width:323rpx;
+    position: fixed;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:50rpx;
+}
+.ul .li image{
+    width:234rpx;
+}
+.ul .li.on image:last-child, .ul .li image:first-child{
+    display: none;
+}
+.ul .li.on image:first-child{
+    display: block;
+}
+.ul .li{
+    position: absolute;
+    z-index: 10;
+}
+.ul .li:first-child{
+    left:740rpx;
+    top:660rpx;
+}
+.ul .li:nth-child(2){
+    left:400rpx;
+    top:540rpx;}
+.ul .li:nth-child(3){
+    left:1870rpx;
+    top:650rpx;
+}
+.ul .li:nth-child(4){
+    left:145rpx;
+    top:920rpx;
+}
+.aircraft{
+    position: absolute;
+    width:183rpx;
+    height: 130rpx;
+    z-index: 50;
+}
+.position-right{
+    transition: left 1.5s linear,top 1.5s linear;
+}
+.position-left{
+    transition: left 1.5s linear,top 1.5s linear;transform: rotateY(180deg) !important;
+}
+.aircraft.one{
+    left:775rpx;
+    top:435rpx;
+    /* transition: all 1.5s linear;    
+    z-index: 50; */
+}
+.aircraft.two{
+    left:460rpx;
+    top:325rpx;
+    /* transition: all 1.5s linear;
+    z-index: 50; */
+}
+.aircraft.three{
+    left:1875rpx;
+    top:390rpx;
+    /* transition:left 1.5s linear, top 1.5s linear;
+    transform: rotateY(180deg);
+    z-index: 50; */
+}
+.aircraft.four{
+    left:205rpx;
+    top:690rpx;
+    /* transition:left 1.5s linear, top 1.5s linear;
+    z-index: 50; */
+}
+/* **首次进入弹窗样式** */
+.zhe{
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+.popup{
+  width: 658rpx;
+  height: 502rpx;
+  background-image: url(https://game.flyh5.cn/resources/game/wechat/szq/danci/images/index/first.png);
+  background-size: cover;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 55;
+}
+.btns{
+  width: 270rpx;
+  height: 85rpx;
+  /* line-height: 75rpx; */
+  background: none;
+  background-image: url(https://game.flyh5.cn/resources/game/wechat/szq/danci/images/index/rece.png);
+  background-size: cover;
+  /* color: #fff;
+  font-size: 36rpx;
+  font-weight: 600; */
+  position: absolute;
+  left: 50%;
+  bottom: 20rpx;
+  transform: translateX(-50%);
+}
+.btns::after{
+  border: none;
+}
