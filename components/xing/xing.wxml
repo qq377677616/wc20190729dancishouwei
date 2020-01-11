@@ -1,0 +1,4 @@
+<!--components/topicHerd/index.wxml-->
+<view class="img">
+    <image mode="widthFix" style="height:auto;" src="{{resourcesUrl}}xing.png"></image>
+</view>

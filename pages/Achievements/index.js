@@ -46,36 +46,115 @@ Page({
     },
     //弹窗开关
     showMsgBox() {
-        let {isShowCheckBox} = this.data
-        this.setData({isShowCheckBox: !isShowCheckBox})
-    },
-    //获取个人信息
-    async getUserInfo() {
-        const rdSession = wx.getStorageSync('rdSession')
-        let {userInfo} = this.data
-        let data = {}
-        if(this.data.userid != ''){
-          data = {
-            rdSession: rdSession,
-            type: 1,
-            num: Number(this.data.num),
-            share_id: this.data.userid,
-          }
-        }else{
-          data = {
-            rdSession: rdSession,
-            type: 1,
-            num: '',
-            share_id: '',
-          }
+      let {isShowCheckBox} = this.data
+      this.setData({isShowCheckBox: true})
+      let _this = this;
+      let rdSession = wx.getStorageSync('rdSession')
+      axios.get('Index/sign_in', { rdSession: rdSession, type: 1 }).then(res => {
+        console.log('ressssss',res)
+        for(let i=0;i<res.data.data.day;i++){
+          _this.setData({ ['checkList['+i+'].std']:true})
         }
-        await axios.get('Index/get_user_info', data).then(res => {
-          console.log('resssss123',res)
-            userInfo = res.data.data
-        })
-      console.log('userInfoooo', userInfo)
-        this.setData({userInfo: userInfo})
+      })
+      console.log('isShowCheckBox', this.data.isShowCheckBox)
     },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    let _this = this;
+    console.log('options.userid', options.userid)
+    if (options.userid) {
+      this.setData({
+        userid: options.userid,
+      })
+    }
+    if (options.num) {
+      this.setData({
+        num: options.num
+      })
+    }
+    let isBg = wx.getStorageSync('isBg');
+    console.log('isBgggggg', isBg)
+    // app.login(() => {
+    //   //需要openid的函数
+    //   this.handCheckData()
+    //   if (options.userid) {
+    //     const rdSession = wx.getStorageSync('rdSession')
+    //     axios.get('Index/set_expire', { rdSession: rdSession }).then(res => {
+    //       try{
+    //         if (res.data.code == 1) {
+    //           _this.setData({ 'userInfo.star': res.data.data })
+    //           _this.getUserInfos()
+    //         }
+    //       }
+    //       catch(err){
+    //         console.log('errrrrrrrr',err)
+    //       }
+
+    //     })
+    //   } else {
+    //     _this.getUserInfos()
+    //   }
+    // })
+    if(isBg){
+      app.login(() => {
+        //需要openid的函数
+        this.handCheckData()
+        if (options.userid) {
+          const rdSession = wx.getStorageSync('rdSession')
+          axios.get('Index/set_expire', { rdSession: rdSession }).then(res => {
+            if(res.data.code == 1){
+              console.log('ressssss.code', res)
+              _this.setData({ 'userInfo.star': res.data.data })
+              _this.getUserInfo()
+            }
+
+          })
+        }else{
+          _this.getUserInfo()
+        }
+      })
+    }else{
+      this.handCheckData()
+      this.getUserInfo()
+    }
+
+    let isUser = wx.getStorageSync('userInfo')
+    if (!isUser) {
+      this.setData({ isAuthorization: true })
+      return false
+    } else {
+      return true
+    }
+  },
+  //获取个人信息
+  getUserInfo() {
+    const rdSession = wx.getStorageSync('rdSession')
+    let _this = this;
+    let { userInfo } = this.data
+    let data = {}
+    if (this.data.userid != '') {
+      data = {
+        rdSession: rdSession,
+        type: 1,
+        num: Number(this.data.num),
+        share_id: this.data.userid,
+      }
+    } else {
+      data = {
+        rdSession: rdSession,
+        type: 1,
+        num: '',
+        share_id: '',
+      }
+    }
+    axios.get('Index/get_user_info', data).then(res => {
+      userInfo = res.data.data
+      this.setData({ userInfo: userInfo })
+      console.log('userInfo',_this.data.userInfo)
+    })
+  },
     cat(){
       this.setData({ isShow: true})
     },
@@ -89,22 +168,22 @@ Page({
     // 签到
     handCheck(e) {
       this.audios.play();
-        // let index = e.currentTarget.dataset.index
-        let {checkList} = this.data
-        let index = 0;
-        for(let i=0;i<checkList.length;i++){
-          if(!checkList[i].std){
-            index = i;
-            break;
-          }
+      // let index = e.currentTarget.dataset.index
+      let {checkList} = this.data
+      let index = 0;
+      for(let i=0;i<checkList.length;i++){
+        if(!checkList[i].std){
+          index = i;
+          break;
         }
-        console.log('indexxxxxxx',index)
-        let { isShowCheckBox } = this.data
-        this.setData({ isShowCheckBox: !isShowCheckBox })
-        //如果已签到则返回
-        if (checkList[index].std) return
-        //调用签到接口
-        this.handCheckData(2)
+      }
+      console.log('indexxxxxxx', index, checkList[index].std)
+      // let { isShowCheckBox } = this.data
+      // this.setData({ isShowCheckBox: !isShowCheckBox })
+      //如果已签到则返回
+      if (checkList[index].std) return
+      //调用签到接口
+      this.handCheckData(2)
     },
     //获取签到数据
     async handCheckData(std = 1) {
@@ -245,51 +324,7 @@ Page({
     //     }
     //   })
     // },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-      let _this = this;
-      if (options.userid){
-        this.setData({
-          userid: options.userid,
-        })
-        
-      }
-      if (options.num){
-        this.setData({
-          num: options.num
-        })
-      }
-      let isBg = wx.getStorageSync('isBg');
-      if(isBg){
-        app.login(() => {
-          //需要openid的函数
-          this.handCheckData()
-          if (options.userid) {
-            const rdSession = wx.getStorageSync('rdSession')
-            axios.get('Index/set_expire', { rdSession: rdSession }).then(res => {
-              console.log('ressssss.code',res)
-              _this.setData({ 'userInfo.star': ret.data.data })
-              _this.getUserInfo()
-            })
-          }else{
-            _this.getUserInfo()
-          }
-        })
-      }else{
-        this.handCheckData()
-        this.getUserInfo()
-      }
-      
-      let isUser = wx.getStorageSync('userInfo')
-      if (!isUser) {
-        this.setData({ isAuthorization: true })
-        return false
-      } else {
-        return true
-      }
-    },
+    
     //登录授权
     async onGotUserInfo({ detail }) {
       const { userInfo } = detail

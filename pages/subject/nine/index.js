@@ -8,6 +8,7 @@ Page({
   data: {
     resourcesUrl: `${wx.getStorageSync("resourcesUrl")}/images/subject/one/`,
     isShow: true, //控制提示框显示
+    isX: false, //答题完显示星星
     datas:{},
     cityName: '',
     contents: [],
@@ -29,7 +30,9 @@ Page({
     // 拿到城市ID
     let cityId = wx.getStorageSync('cityId');
     axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId, id: options.id }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
+      // 在本地保存小怪兽图片 在闯关成功页面显示
+      wx.setStorageSync('monster', res.data.data.user.monster.yes_pic);
       //  获取怪兽血条数
       let lifebar = wx.getStorageSync('lifebar');
       let str = 'datas.user.monster.lifebar';
@@ -58,7 +61,7 @@ Page({
       //  判断输入的是不是第一个字母
       if (_this.num == 0){
         if (!isStart(_index)) {
-          console.log("答错了", "您当前选择的不是某个单词开头字母", "好的,red", false)
+          //console.log("答错了", "您当前选择的不是某个单词开头字母", "好的,red", false)
           this.audioCtx2.play();
           //  减少怪兽血条数
           if (lifebar < 9) {
@@ -150,7 +153,7 @@ Page({
             let str = _this.datas.question.answer[_this.cindex].split('');
             //  如果当前选中的字母 == 对应单词中的字母
             if (str[_this.num] == _this.datas.answer[_index].word) {
-              console.log('答对了')
+              //console.log('答对了')
               let arr = 'contents[' + _this.num + ']';
               let arrs = 'datas.answer[' + _index + '].isY';
               this.setData({
@@ -195,11 +198,13 @@ Page({
                   this.setData({ contents: arr })
                 }
               }
-              //  答对 播放音频
-              this.audioCtx1.play();
               if (_this.datas.question.answer.length == 0){
-                console.log('全部答完了')
+                //console.log('全部答完了')
+                this.audioCtx3.play();
                 this.answer(1)
+              }else{
+                //  答对 播放音频
+                this.audioCtx1.play();
               }
               // 增加怪兽血条数
               if (lifebar > 1) {
@@ -209,7 +214,7 @@ Page({
                 this.setData({ [str]: lifebar })
               }
             } else {
-              console.log('答错了')
+              //console.log('答错了')
               for (let i = 0; i < _this.datas.answer.length; i++) {
                 if (_this.datas.answer[i].isY == 2) {
                   let arr = 'datas.answer[' + i + '].isY';
@@ -264,7 +269,7 @@ Page({
     let rdSession = wx.getStorageSync('rdSession');
     let data = this.data.datas;
     axios.post('Index/set_answer', { rdSession: rdSession, q_id: data.id, is_yes: is_yes, star: data.star, monsterid: data.user.monster.id }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
       if (res.data.code == 1) {
         //  拿到答题数
         let anumber = wx.getStorageSync('anumber');
@@ -272,12 +277,12 @@ Page({
         // 拿到答题分数
         let score = wx.getStorageSync('score') + this.data.datas.star;;
         wx.setStorageSync('score', score)
-        console.log('this.data.datas===>', this.data.datas)
+        //console.log('this.data.datas===>', this.data.datas)
         if (anumber >= this.data.datas.count) {
           console.log('该城市所有题目已答完');
           //  如果是最后一题 小怪兽就变成笑脸
           let str = 'datas.user.monster.is_last';
-          this.setData({ [str]: true });
+          this.setData({ [str]: true, isX: true });
           wx.redirectTo({
             url: '/pages/clearance/index',
           })
@@ -288,6 +293,7 @@ Page({
           let rdSession = wx.getStorageSync('rdSession');
           // 拿到当前点击的城市ID
           let cityId = wx.getStorageSync('cityId')
+          this.setData({ isX: true })
           axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
             let ids = res.data.data.id;
             if (res.data.data.typeid == 1) {
@@ -327,7 +333,7 @@ Page({
     })
   },
   cane: function () {
-    console.log("取消");
+    //console.log("取消");
     this.setData({
       isShow: true
     })
@@ -343,7 +349,7 @@ Page({
       if (res.data.code == 1) {
         let _this = this.data;
         if (_this.contents.join('') != '') {
-          console.log('contentssssssssss', _this.contents.join(''))
+          //console.log('contentssssssssss', _this.contents.join(''))
           // 已选中的部分单词字母
           let cont = _this.contents.join('');
           let arr = [];
@@ -391,7 +397,7 @@ Page({
           [arr1]: _this.datas.user.star - 1
         })
       } else if (res.data.code == 301) {
-        console.log('星星数量不够')
+        //console.log('星星数量不够')
       }
     })
   },
@@ -401,6 +407,7 @@ Page({
   onReady: function () {
     this.audioCtx1 = wx.createAudioContext('myAudios1')
     this.audioCtx2 = wx.createAudioContext('myAudios2')
+    this.audioCtx3 = wx.createAudioContext('myAudios3')
   },
 
   /**

@@ -3,7 +3,9 @@
     <!-- 公共头部组件 -->
     <topic-herd datas="{{users}}"></topic-herd>
     <!-- 充值弹窗组件 -->
-    <member wx:if="{{users.user.is_ball}}"></member>
+    <!-- <member wx:if="{{users.user.is_ball}}"></member> -->
+    <!-- 答题完成显示星星 -->
+    <xing wx:if="{{isX}}"></xing>
     <!-- 答对答错音频播放 -->
     <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
     <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
@@ -23,7 +25,7 @@
                     <view class="content-three {{datas[2].txt.isY==1?'yes':datas[2].txt.isY==2?'no':''}}" data-index="2" data-name="txt" data-type="{{datas[2].txt.type}}" bindtap="select">{{datas[2].txt.answer}}</view>
                 </view> -->
                 <view>
-                    <view class="icons icon-one {{datas[0].isY==1?'yes':datas[0].isY==2?'no':''}} {{datas[0].ischeck?'bor':''}}" data-index="0" data-name="pic" data-type="{{datas[0].type}}" bindtap="select"><image class="{{datas[0].isTip?'tran':''}}" src="{{datas[0].pic}}"></image></view>
+                    <view class="icons icon-one {{datas[0].isY==1?'yes':datas[0].isY==2?'no':''}} {{datas[0].ischeck?'bor':''}}" data-index="0" data-name="pic" data-type="{{datas[0].type}}" bindtap="select"><image class="{{datas[0].isTip?'tran':''}}" mode="widthFix" src="{{datas[0].pic}}"></image></view>
                     <view class="flex">
                       <view class="contents content-one {{datas[1].isY==1?'yes':datas[1].isY==2?'no':''}} {{datas[1].isTip?'font':''}} {{datas[1].ischeck?'bor':''}}" data-index="1" data-name="txt" data-type="{{datas[1].type}}" bindtap="select">{{datas[1].txt}}</view>
                     </view>
@@ -33,10 +35,10 @@
                   <view class="flex">
                     <view class="contents content-two {{datas[3].isY==1?'yes':datas[3].isY==2?'no':''}} {{datas[3].isTip?'font':''}} {{datas[3].ischeck?'bor':''}}" data-index="3" data-name="txt" data-type="{{datas[3].type}}" bindtap="select">{{datas[3].txt}}</view>
                   </view>
-                    <view class="icons icon-two {{datas[2].isY==1?'yes':datas[2].isY==2?'no':''}} {{datas[2].ischeck?'bor':''}}" data-index="2" data-name="pic" data-type="{{datas[2].type}}" bindtap="select"><image class="{{datas[2].isTip?'tran':''}}" src="{{datas[2].pic}}"></image></view>
+                    <view class="icons icon-two {{datas[2].isY==1?'yes':datas[2].isY==2?'no':''}} {{datas[2].ischeck?'bor':''}}" data-index="2" data-name="pic" data-type="{{datas[2].type}}" bindtap="select"><image class="{{datas[2].isTip?'tran':''}}" mode="widthFix" src="{{datas[2].pic}}"></image></view>
                 </view>
                 <view>
-                    <view class="icons icon-three {{datas[4].isY==1?'yes':datas[4].isY==2?'no':''}} {{datas[4].ischeck?'bor':''}}" data-index="4" data-name="pic" data-type="{{datas[4].type}}" bindtap="select"><image class="{{datas[4].isTip?'tran':''}}" src="{{datas[4].pic}}"></image></view>
+                    <view class="icons icon-three {{datas[4].isY==1?'yes':datas[4].isY==2?'no':''}} {{datas[4].ischeck?'bor':''}}" data-index="4" data-name="pic" data-type="{{datas[4].type}}" bindtap="select"><image class="{{datas[4].isTip?'tran':''}}" mode="widthFix" src="{{datas[4].pic}}"></image></view>
                     <view class="flex">
                       <view class="contents content-three {{datas[5].isY==1?'yes':datas[5].isY==2?'no':''}} {{datas[5].isTip?'font':''}} {{datas[5].ischeck?'bor':''}}" data-index="5" data-name="txt" data-type="{{datas[5].type}}" bindtap="select">{{datas[5].txt}}</view>
                     </view>

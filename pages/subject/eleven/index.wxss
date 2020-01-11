@@ -44,11 +44,11 @@
  margin-top: -20rpx;
 }
 .yes{
-  background: green !important;
+  background: #d1ff74 !important;
   color: #fff !important;
 }
 .no{
-  background: red !important;
+  background: #ed3c3e !important;
   color: #fff !important;
 }
 /* .icon-one,.icon-two,.icon-three{
@@ -84,9 +84,9 @@
 }
 .icon-one image, .icon-two image, .icon-three image{
     display: block;
-    width: 80%;
+    width: 60%;
     max-height: 80%;
-    border-radius: 50%;
+    /* border-radius: 50%; */
 }
 /* .content-one,.content-two,.content-three{
     line-height: 80rpx;

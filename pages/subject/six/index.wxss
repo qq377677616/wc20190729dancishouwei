@@ -28,9 +28,10 @@
 .topic-box .topic-box-top view image{
     position: absolute;
     width: 100rpx;
-    height: 100rpx;
-    left: calc(50% - 50rpx);
-    top: calc(50% - 50rpx);
+    max-height: 160rpx !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 .topic-box .topic-box-bottom{
     border-radius: 20rpx;
@@ -84,6 +85,7 @@
     justify-content: center;
     color: #f73c44;
     background: #fff;
+    border-radius: 10rpx;
 }
 .tips{
   width: 575rpx;
@@ -101,14 +103,18 @@
 /* .tran{
   transform: scale(1.3);
 } */
+.isTip{
+  font-size: 50rpx;
+  font-weight: bold;
+}
 .font{
   font-size: 85rpx !important;
 }
 .yes{
-  background: green !important;
+  background: #d1ff74 !important;
 }
 .no{
-  background: red !important;
+  background: #ed3c3e !important;
   color: #fff !important;
 }
 .boxs{

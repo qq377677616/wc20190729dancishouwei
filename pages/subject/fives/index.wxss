@@ -17,10 +17,10 @@
   display: none;
 }
 .yes{
-  background: green !important;
+  background: #d1ff74 !important;
 }
 .no{
-  background: red !important;
+  background: #ed3c3e !important;
   color: #fff !important;
 }
 .topic-box .topic-box-top{

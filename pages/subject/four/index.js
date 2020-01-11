@@ -10,6 +10,7 @@ Page({
     datas: {},
     cityName: '',
     isShow: true, //控制提示框显示
+    isX: false, // 答题完显示星星
     //  提示下标
     _index: 100
   },
@@ -24,7 +25,9 @@ Page({
     // 拿到城市ID
     let cityId = wx.getStorageSync('cityId');
     axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId, id: options.id }).then(res => {
-      console.log("ressssss111", res)
+      //console.log("ressssss111", res)
+      // 在本地保存小怪兽图片 在闯关成功页面显示
+      wx.setStorageSync('monster', res.data.data.user.monster.yes_pic);
       //  获取怪兽血条数
       let lifebar = wx.getStorageSync('lifebar');
       let str = 'datas.user.monster.lifebar';
@@ -49,7 +52,7 @@ Page({
     //  获取怪兽血条数
     let lifebar = wx.getStorageSync('lifebar');
     if(rand == index){
-      console.log("Yes")
+      //console.log("Yes")
       this.answer(1)
       //  答对 播放音频
       this.audioCtx2.play();
@@ -61,7 +64,7 @@ Page({
         this.setData({ [str]: lifebar })
       }
     }else{
-      console.log("No")
+      //console.log("No")
       this.answer(2)
       //  答错 播放音频
       this.audioCtx3.play();
@@ -82,7 +85,7 @@ Page({
       let rdSession = wx.getStorageSync('rdSession');
       let data = this.data.datas;
       axios.post('Index/set_answer', { rdSession: rdSession, q_id: data.id, is_yes: is_yes, star: data.star, monsterid: data.user.monster.id }).then(res => {
-        console.log("ressssss", res)
+        //console.log("ressssss", res)
         if (res.data.code == 1) {
           //  拿到答题数
           let anumber = wx.getStorageSync('anumber');
@@ -94,7 +97,7 @@ Page({
             console.log('该城市所有题目已答完');
             //  如果是最后一题 小怪兽就变成笑脸
             let str = 'datas.user.monster.is_last';
-            this.setData({ [str]: true });
+            this.setData({ [str]: true, isX: true });
             wx.redirectTo({
               url: '/pages/clearance/index',
             })
@@ -105,6 +108,7 @@ Page({
             let rdSession = wx.getStorageSync('rdSession');
             // 拿到当前点击的城市ID
             let cityId = wx.getStorageSync('cityId')
+            this.setData({ isX: true })
             axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
               let ids = res.data.data.id;
               if (res.data.data.typeid == 1) {
@@ -145,7 +149,7 @@ Page({
     })
   },
   cane:function(){
-    console.log("取消");
+    //console.log("取消");
     this.setData({
       isShow: true
     })
@@ -158,7 +162,7 @@ Page({
     // 拿到登录状态
     let rdSession = wx.getStorageSync('rdSession');
     axios.post('Index/deduct_star', { rdSession: rdSession, star: 2 }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
       if (res.data.code == 1) {
         //  修改当前用户拥有的星星数量 
         let arr = 'datas.user.star';
@@ -168,7 +172,7 @@ Page({
         })
 
       } else if (res.data.code == 301) {
-        console.log('星星数量不够')
+        //console.log('星星数量不够')
       }
     })
   },

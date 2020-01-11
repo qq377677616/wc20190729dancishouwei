@@ -3,13 +3,18 @@
     <!-- 公共头部组件 -->
     <topic-herd datas="{{datas}}"></topic-herd> 
     <!-- 充值弹窗组件 -->
-    <member wx:if="{{datas.user.is_ball}}"></member>
+    <!-- <member wx:if="{{datas.user.is_ball}}"></member> -->
+    <!-- 答题完显示星星 -->
+    <xing wx:if="{{isX}}"></xing>
     <!-- 答对答错音频播放 -->
     <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
     <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <view class="boxs" bindtap="closes" wx:if="{{imgUrl}}">
+      <image mode="widthFix" style="height:auto;" src="{{imgUrl}}"></image>
+    </view>
     <view class="topic-box">
         <view class="topic-box-bottom">
-            <image src="{{datas.question.pic}}" mode="widthFix"></image>
+            <image src="{{datas.question.pic}}" mode="widthFix" data-url="{{datas.question.pic}}" bindtap="click"></image>
             <view>
                 {{datas.question.txt}}
             </view>

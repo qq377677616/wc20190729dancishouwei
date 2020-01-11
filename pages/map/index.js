@@ -16,6 +16,7 @@ Page({
       { offIcon: 'page2_7.png', onIcon: 'page2_6.png', url: '/pages/mapdetailed/northamerica/index', zm: 'NORTH AMERICA'},
       { offIcon: 'page2_9.png', onIcon: 'page2_8.png', url: '/pages/mapdetailed/africa/index', zm: 'AFRICA'},
     ],
+    datas:{},
     leftWidth: 240, // 当前页面默认滚动位置
     repeat: true, // 防止重复选择关卡
     pot: 0, // 当前飞机坐标点
@@ -42,7 +43,7 @@ Page({
     let rdSession = wx.getStorageSync('rdSession');
     //  获取当前过关的大洲
     axios.post('Index/get_route', { rdSession: rdSession }).then(res => {
-      if(res.data.data.type == 2){
+      // if(res.data.data.type == 2){
         let width = res.data.data.sum == 1 ? 240 : res.data.data.sum == 2 ? 0 : res.data.data.sum == 3 ? 650 : 0;
         _this.setData({
           curShut: res.data.data.sum,
@@ -59,12 +60,12 @@ Page({
           //res就是 所有标签为mjltest的元素的信息 的数组
           _this.setData({ pot: res[0].left })
         })
-      }else{
-        _this.setData({
-          curShut: 4,
-          point: 4
-        })
-      }
+      // }else{
+      //   _this.setData({
+      //     curShut: 4,
+      //     point: 4
+      //   })
+      // }
       
       let { curShut } = _this.data;
       // tool.alert(`第${curShut}关`)

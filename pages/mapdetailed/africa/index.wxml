@@ -1,6 +1,8 @@
 <!-- 非洲模块 -->
 <view>
   <scroll-view scroll-x scroll-y scroll-top="150">
+    <!-- 充值弹窗组件 -->
+    <member wx:if="{{datas.user.is_ball}}"></member>
     <!-- 背景音乐 -->
     <audio src="{{resourcesUrl}}city.mp3" id="myAudios2" controls loop></audio>
         <image class="bg-img" src="{{resourcesUrl}}feizhou.png" mode="widthFix"/>
@@ -9,7 +11,8 @@
           <view class="li li-{{index}}" wx:for="{{cityList}}" data-index="{{index}}"
             data-id="{{item.id}}" wx:key="{{index+1}}" bindtap="passThrough">
               <view class="left">
-                <image id="icon{{index}}" mode="widthFix" class="icon" src="{{resourcesUrl}}page6_19.png"/>
+                <image class='icon' id="icon{{index}}" mode="widthFix" src="{{resourcesUrl}}{{index < activeIndex?'page3_2.png':'page3_24.png'}}" wx:if="{{indexs != index}}"/> 
+                    <image class='icon icons' mode="widthFix" src="{{resourcesUrl}}{{indexs == index? 'check.png':'page3_24.png'}}" wx:if="{{indexs == index}}"/> 
               </view>
               <view class="right">
                 <text>{{item.k}} {{item.city}}</text>

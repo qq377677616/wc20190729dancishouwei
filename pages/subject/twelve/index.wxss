@@ -34,7 +34,7 @@
   margin-top: 80rpx;
 }
 .topic-box-top .v2{
-  margin-top: 30rpx;
+  margin-top: 5rpx;
 }
 .topic-box .topic-box-top > text{
     line-height: 220rpx;
@@ -55,10 +55,11 @@
 }
 .topic-box .topic-box-bottom view image{
     position: absolute;
-    width: 100rpx;
-    height: 100rpx;
-    left: calc(50% - 50rpx);
-    top: calc(50% - 50rpx);
+    width: 150rpx;
+    max-height: 180rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 #myAudio{
   display: none;
@@ -89,10 +90,10 @@
   font-size: 85rpx !important;
 }
 .yes{
-  background: green !important;
+  background: #d1ff74 !important;
 }
 .no{
-  background: red !important;
+  background: #ed3c3e !important;
 }
 .boxs{
   width: calc(100% - 80rpx);

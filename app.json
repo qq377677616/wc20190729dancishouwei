@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/mapdetailed/asia/index",
     "pages/clearance/index",
+    "pages/mapdetailed/asia/index",
     "pages/map/index",
     "pages/mapdetailed/africa/index",
     "pages/mapdetailed/northamerica/index",
@@ -44,6 +44,7 @@
   },
   "usingComponents": {
     "topic-herd": "/components/topicHerd/index",
+    "xing": "/components/xing/xing",
     "tips": "/components/prompt/index",
     "showModal": "/components/showModal/showModal",
     "audio-cpt": "components/audiocpt/index",

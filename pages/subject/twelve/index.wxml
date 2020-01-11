@@ -1,15 +1,22 @@
 <!--pages/subject/twelve/index.wxml-->
 <view class="twelve-bg" style='background-image: url("{{datas.city_pic}}")'>
     <topic-herd datas="{{datas}}"></topic-herd>
-    <member wx:if="{{datas.user.is_ball}}"></member>
+    <!-- <member wx:if="{{datas.user.is_ball}}"></member> -->
+    <!-- 答题完成显示星星 -->
+    <xing wx:if="{{isX}}"></xing>
+    <!-- 答对答错音频播放 -->
+    <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+    <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
     <audio src="{{datas.question}}" id="myAudio" controls></audio>
     <!-- <view class="boxs" bindtap="closes" wx:if="{{imgUrl}}">
       <image mode="widthFix" style="height:auto;" src="{{imgUrl}}"></image>
     </view> -->
     <view class="topic-box {{imgUrl?'margin_top':''}}">
         <view class="topic-box-top">
-            <view class="v1" wx:if="{{istip>0}}"><text>{{datas.hit[0]}}</text></view>
-            <view class="v2" wx:if="{{istip>1}}"><text>{{datas.hit[1]}}</text></view>
+            <!-- <view class="v1" wx:if="{{istip>0}}"><text>{{datas.hit[0]}}</text></view>
+            <view class="v2" wx:if="{{istip>1}}"><text>{{datas.hit[1]}}</text></view> -->
+            <view class="v1"><text>{{datas.hit[0]}}</text></view>
+            <view class="v2"><text>{{datas.hit[1]}}</text></view>
             <view class="audio-cpt" catchtap="playAudio">
                 <audio-cpt></audio-cpt>
             </view>
@@ -23,5 +30,5 @@
     <view class="tips">
       <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
     </view>
-    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips>
+    <!-- <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips> -->
 </view>

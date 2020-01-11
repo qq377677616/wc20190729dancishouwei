@@ -20,6 +20,7 @@ Page({
         cityList:[],
         leftWidth: 240, // 当前页面默认滚动位置
         point: 0, // 当前飞机坐标点
+      indexs: 1000, // 选中气球变色
     },
 
     /**
@@ -61,6 +62,7 @@ Page({
         this.data.repeat = false;
         const { inverted, key } = this.data
         let dataIndex = currentTarget.dataset.index
+        wx.setStorageSync('poindex', dataIndex)
         let _this = this;
         if (dataIndex > this.data.activeIndex) {
           this.data.repeat = true;
@@ -73,6 +75,7 @@ Page({
         let points = 0;
         query.select(ids).boundingClientRect()
         query.exec(function (res) {
+          console.log('ressssss',res)
           //res就是 所有标签为mjltest的元素的信息 的数组
           points = res[0].left;
           // 判断当前飞机的坐标距离屏幕左边的距离 是否大于点击的坐标距离
@@ -87,7 +90,7 @@ Page({
               point: points
             })
           }
-          _this.setData({ key: currentTarget.dataset.index })
+          _this.setData({ key: currentTarget.dataset.index, indexs: dataIndex })
           //  如果选择的是第一关就把定时器的时间缩短
           let times = dataIndex == key ? 50 : 2000;
           let timer = setTimeout(() => { // 气球点亮延迟
@@ -111,31 +114,35 @@ Page({
             axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
               console.log("ressssss", res)
               let ids = res.data.data.id;
-              if (res.data.data.typeid == 1) {
-                wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
-              } else if (res.data.data.typeid == 2) {
-                wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
-              } else if (res.data.data.typeid == 3) {
-                wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
-              } else if (res.data.data.typeid == 4) {
-                wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
-              } else if (res.data.data.typeid == 5) {
-                wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
-              } else if (res.data.data.typeid == 6) {
-                wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
-              } else if (res.data.data.typeid == 7) {
-                wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
-              } else if (res.data.data.typeid == 8) {
-                wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
-              } else if (res.data.data.typeid == 9) {
-                wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
-              } else if (res.data.data.typeid == 10) {
-                wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
-              } else if (res.data.data.typeid == 11) {
-                wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
-              } else if (res.data.data.typeid == 12) {
-                wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
+              _this.setData({ datas: res.data.data })
+              if (!res.data.data.user.is_ball) {
+                if (res.data.data.typeid == 1) {
+                  wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
+                } else if (res.data.data.typeid == 2) {
+                  wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
+                } else if (res.data.data.typeid == 3) {
+                  wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
+                } else if (res.data.data.typeid == 4) {
+                  wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
+                } else if (res.data.data.typeid == 5) {
+                  wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
+                } else if (res.data.data.typeid == 6) {
+                  wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
+                } else if (res.data.data.typeid == 7) {
+                  wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
+                } else if (res.data.data.typeid == 8) {
+                  wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
+                } else if (res.data.data.typeid == 9) {
+                  wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
+                } else if (res.data.data.typeid == 10) {
+                  wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
+                } else if (res.data.data.typeid == 11) {
+                  wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
+                } else if (res.data.data.typeid == 12) {
+                  wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
+                }
               }
+              
             })
             _this.data.repeat = true;
             clearTimeout(timer);

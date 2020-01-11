@@ -57,7 +57,7 @@
                         </view>
                     </view>
                     <!--        彩色按钮        -->
-                    <image src="{{resourcesUrl}}page22_10.png"
+                    <image src="{{resourcesUrl}}{{item.is_type==1?'page22_10.png':'rebuild.png'}}"
                            bindtap="pleaseConfirm"
                            data-id="{{item.id}}"
                            data-index="{{index}}"
@@ -80,11 +80,12 @@
             <!--      选中内容 提示      -->
             <view class="message-Box-herd">
                 <view>
-                    <text>User 3</text>
+                    <text>User {{star}}</text>
                     <image class="xing" src="{{resourcesUrl}}page20_20.png"></image> 
                     <text>to help!</text>
                 </view>
                 <image class="shop" src="{{isShowMsgBox.img}}"></image>
+                <!-- <view class="shop" style="background-image:url({{isShowMsgBox.img}});"></view> -->
             </view>
             <!--      弹窗按钮 YSE NO      -->
             <view class="message-Box-btn">

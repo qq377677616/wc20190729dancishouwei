@@ -17,6 +17,7 @@ Page({
         'page22_25.png',
         'page22_26.png',
     ],
+    star: 20, //购买饰品消耗星星数
     datas:[],
     zIndex: 0,
     deId:0,
@@ -31,7 +32,12 @@ Page({
     this.audios.play();
     isShowMsgBox.std = true
     isShowMsgBox.img = e.currentTarget.dataset.url;
-    this.setData({ isShowMsgBox: isShowMsgBox, deId: e.currentTarget.dataset.id, zIndex: e.currentTarget.dataset.index})
+    this.setData({ 
+      isShowMsgBox: isShowMsgBox, 
+      deId: e.currentTarget.dataset.id, 
+      zIndex: e.currentTarget.dataset.index,
+      star: this.data.datas.list[e.currentTarget.dataset.index].star
+    })
     // console.log("zIndexxxxxx",this.data.zIndex)
   },
 
@@ -51,7 +57,7 @@ Page({
       if (res.data.code == 1) {
         tool.alert("援救成功")
         let arr = "datas.list[" + this.data.zIndex+"].type";
-        this.setData({[arr]:2});
+        this.setData({ [arr]: 2,'datas.user.star':res.data.data});
       }
     })
   },

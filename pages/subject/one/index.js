@@ -12,6 +12,7 @@ Page({
     audioUrl:'',
     datas: {},
     cityName: '',
+    isX: false, //答题完显示星星
     // 判断是否已选中正确答案
     isYes: false,
     // 提示下标
@@ -36,7 +37,7 @@ Page({
     //  判断是否选中正确答案
     if (!this.data.isYes){
       if (index == rand) {
-        console.log("Yessssss")
+        //console.log("Yessssss")
         let arr = 'datas.answer[' + index + '].isY'
         this.setData({ activeValue: currentTarget.dataset.value, [arr]: 1, isYes: true });
         for (let i = 0; i < this.data.datas.answer.length; i++) {
@@ -58,7 +59,7 @@ Page({
           this.setData({ [str]: lifebar })
         }
       } else {
-        console.log("Nooooooo")
+        //console.log("Nooooooo")
         let arr = 'datas.answer[' + index + '].isY'
         this.setData({
           [arr]: 2
@@ -83,7 +84,7 @@ Page({
     let rdSession = wx.getStorageSync('rdSession');
     let data = this.data.datas;
     axios.post('Index/set_answer', { rdSession: rdSession, q_id: data.id, is_yes: is_yes, star: data.star, monsterid: data.user.monster.id }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
       if (res.data.code == 1) {
         //  拿到答题数
         let anumber = wx.getStorageSync('anumber');
@@ -91,12 +92,12 @@ Page({
         // 拿到答题分数
         let score = wx.getStorageSync('score') + this.data.datas.star;;
         wx.setStorageSync('score', score)
-        console.log('this.data.datas===>', this.data.datas)
+        //console.log('this.data.datas===>', this.data.datas)
         if (anumber >= this.data.datas.count) {
           console.log('该城市所有题目已答完');
           //  如果是最后一题 小怪兽就变成笑脸
           let str = 'datas.user.monster.is_last';
-          this.setData({ [str]: true });
+          this.setData({ [str]: true, isX: true });
           wx.redirectTo({
             url: '/pages/clearance/index',
           })
@@ -107,6 +108,7 @@ Page({
           let rdSession = wx.getStorageSync('rdSession');
           // 拿到当前点击的城市ID
           let cityId = wx.getStorageSync('cityId')
+          this.setData({ isX: true })
           axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
             let ids = res.data.data.id;
             if (res.data.data.typeid == 1) {
@@ -145,7 +147,7 @@ Page({
     })
   },
   cane: function () {
-    console.log("取消");
+    //console.log("取消");
     this.setData({
       isShow: true
     })
@@ -158,7 +160,7 @@ Page({
     // 拿到登录状态
     let rdSession = wx.getStorageSync('rdSession');
     axios.post('Index/deduct_star', { rdSession: rdSession, star: 2 }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
       if (res.data.code == 1) {
         //  修改当前用户拥有的星星数量 
         let arr = 'datas.user.star';
@@ -167,7 +169,7 @@ Page({
           [arr]: _this.data.datas.user.star - 2
         })
       } else if (res.data.code == 301) {
-        console.log('星星数量不够')
+        //console.log('星星数量不够')
       }
     })
   },
@@ -180,7 +182,7 @@ Page({
     //   audioUrl:'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
     // })
     let index = currentTarget.dataset.index;
-    console.log('indexxxxxx',index)
+    //console.log('indexxxxxx',index)
     index == 0 ? this.audioCtx2.play() : index == 1 ? this.audioCtx3.play() : index == 2 ? this.audioCtx4.play() : '';
 
   },
@@ -194,7 +196,9 @@ Page({
     // 拿到城市ID
     let cityId = wx.getStorageSync('cityId');
     axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId, id: options.id }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
+      // 在本地保存小怪兽图片 在闯关成功页面显示
+      wx.setStorageSync('monster', res.data.data.user.monster.yes_pic);
       //  获取怪兽血条数
       let lifebar = wx.getStorageSync('lifebar');
       let str = 'datas.user.monster.lifebar';

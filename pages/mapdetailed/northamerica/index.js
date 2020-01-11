@@ -17,6 +17,7 @@ Page({
       cityList: [],
       leftWidth: 180, // 当前页面默认滚动位置     
       point: 0, // 当前飞机坐标点 
+      indexs: 1000, // 选中气球变色
     },
 
     /**
@@ -84,7 +85,7 @@ Page({
               point: points
             })
           }
-          _this.setData({ key: currentTarget.dataset.index })
+          _this.setData({ key: currentTarget.dataset.index, indexs: dataIndex })
           //  如果选择的是第一关就把定时器的时间缩短
           let times = dataIndex == key ? 50 : 2000;
           let timer = setTimeout(() => { // 气球点亮延迟
@@ -108,31 +109,35 @@ Page({
             axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
               console.log("ressssss", res)
               let ids = res.data.data.id;
-              if (res.data.data.typeid == 1) {
-                wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
-              } else if (res.data.data.typeid == 2) {
-                wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
-              } else if (res.data.data.typeid == 3) {
-                wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
-              } else if (res.data.data.typeid == 4) {
-                wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
-              } else if (res.data.data.typeid == 5) {
-                wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
-              } else if (res.data.data.typeid == 6) {
-                wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
-              } else if (res.data.data.typeid == 7) {
-                wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
-              } else if (res.data.data.typeid == 8) {
-                wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
-              } else if (res.data.data.typeid == 9) {
-                wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
-              } else if (res.data.data.typeid == 10) {
-                wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
-              } else if (res.data.data.typeid == 11) {
-                wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
-              } else if (res.data.data.typeid == 12) {
-                wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
+              _this.setData({ datas: res.data.data })
+              if (!res.data.data.user.is_ball) {
+                if (res.data.data.typeid == 1) {
+                  wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
+                } else if (res.data.data.typeid == 2) {
+                  wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
+                } else if (res.data.data.typeid == 3) {
+                  wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
+                } else if (res.data.data.typeid == 4) {
+                  wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
+                } else if (res.data.data.typeid == 5) {
+                  wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
+                } else if (res.data.data.typeid == 6) {
+                  wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
+                } else if (res.data.data.typeid == 7) {
+                  wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
+                } else if (res.data.data.typeid == 8) {
+                  wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
+                } else if (res.data.data.typeid == 9) {
+                  wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
+                } else if (res.data.data.typeid == 10) {
+                  wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
+                } else if (res.data.data.typeid == 11) {
+                  wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
+                } else if (res.data.data.typeid == 12) {
+                  wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
+                }
               }
+              
             })
             _this.data.repeat = true;
             clearTimeout(timer);

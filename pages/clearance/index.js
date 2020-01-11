@@ -16,7 +16,9 @@ Page({
     lists: [],
     star: 0,
     isShow: true,
-    success: true
+    success: true,
+    isShows: false,
+    monster: '', //小怪兽图片
   },
 
   /**
@@ -26,6 +28,7 @@ Page({
     let _this = this;
     let rdSession = wx.getStorageSync('rdSession');
     let star = wx.getStorageSync('score');
+    this.setData({ monster: wx.getStorageSync('monster')})
     axios.post('Index/get_pay_set', { rdSession: rdSession }).then(res => {
       console.log('ressssss', res)
       _this.setData({
@@ -33,6 +36,10 @@ Page({
         star: star
       })
     })
+  },
+  // 关闭进入页面的小怪兽弹层
+  close(){
+    this.setData({ isShows: true})
   },
   //  弹出充值界面
   recharge:function(){
@@ -107,6 +114,7 @@ Page({
   // 自动跳转到下一个城市答题
   linkAnswer(cityId, cityName){
     console.log('cityIddddddddd',cityId,cityName)
+    let _this = this;
     // 拿到登录状态
     let rdSession = wx.getStorageSync('rdSession');
     // 在本地存入城市ID
@@ -123,30 +131,33 @@ Page({
     axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
       console.log("ressssss", res)
       let ids = res.data.data.id;
-      if (res.data.data.typeid == 1) {
-        wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
-      } else if (res.data.data.typeid == 2) {
-        wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
-      } else if (res.data.data.typeid == 3) {
-        wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
-      } else if (res.data.data.typeid == 4) {
-        wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
-      } else if (res.data.data.typeid == 5) {
-        wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
-      } else if (res.data.data.typeid == 6) {
-        wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
-      } else if (res.data.data.typeid == 7) {
-        wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
-      } else if (res.data.data.typeid == 8) {
-        wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
-      } else if (res.data.data.typeid == 9) {
-        wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
-      } else if (res.data.data.typeid == 10) {
-        wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
-      } else if (res.data.data.typeid == 11) {
-        wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
-      } else if (res.data.data.typeid == 12) {
-        wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
+      _this.setData({ datas: res.data.data })
+      if (!res.data.data.user.is_ball) {
+        if (res.data.data.typeid == 1) {
+          wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
+        } else if (res.data.data.typeid == 2) {
+          wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
+        } else if (res.data.data.typeid == 3) {
+          wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
+        } else if (res.data.data.typeid == 4) {
+          wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
+        } else if (res.data.data.typeid == 5) {
+          wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
+        } else if (res.data.data.typeid == 6) {
+          wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
+        } else if (res.data.data.typeid == 7) {
+          wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
+        } else if (res.data.data.typeid == 8) {
+          wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
+        } else if (res.data.data.typeid == 9) {
+          wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
+        } else if (res.data.data.typeid == 10) {
+          wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
+        } else if (res.data.data.typeid == 11) {
+          wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
+        } else if (res.data.data.typeid == 12) {
+          wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
+        }
       }
     })
   },

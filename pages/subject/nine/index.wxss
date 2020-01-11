@@ -99,12 +99,13 @@ page{
 .font{
   font-size: 60rpx !important;
   font-weight: bold;
+  color: #9B88E2 !important;
 }
 .yes{
-  background: green !important;
+  background: #d1ff74 !important;
 }
 .no{
-  background: red !important;
+  background: #ed3c3e !important;
 }
 .no text{
   color: #fff !important;

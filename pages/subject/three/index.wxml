@@ -1,9 +1,16 @@
 <!--pages/subject/three/index.wxml-->
 <view class="three-bg" style='background-image: url("{{datas.city_pic}}")'>
-    <topic-herd datas="{{datas}}"></topic-herd>
+    <!-- 公共头部组件 -->
+    <topic-herd datas="{{datas}}"></topic-herd> 
+    <!-- 充值弹窗组件 -->
+    <!-- <member wx:if="{{datas.user.is_ball}}"></member> -->
+    <!-- 答题完成显示星星 -->
+    <xing wx:if="{{isX}}"></xing>
     <!-- 答对答错音频播放 -->
     <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
     <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <!-- 答对所有选项播放 -->
+    <audio src="{{resourcesUrl}}all.mp3" id="myAudios3" controls></audio>
     <member wx:if="{{datas.user.is_ball}}"></member>
     <view class="topic-box">
         <view class="{{datas.answer[0].isY==1?datas.answer[0].color:datas.answer[0].isY==2?'no':''}} {{datas.answer[0].ischeck?'bor':''}}" data-index="0" bindtap="select"><text class="{{datas.answer[0].istip?'font':''}}">{{datas.answer[0].txt}}</text></view>

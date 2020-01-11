@@ -141,6 +141,7 @@
 .achievements-btn{
     width: 100%;
     padding-top: 10%;
+    
 }
 .achievements-btn image{
     margin: 0 auto;
@@ -158,29 +159,33 @@
     bottom: 0;
     background-color: rgba(0,0,0,.75);
 }
-.msg-box > view:nth-child(1){
+.pops{
     background: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_14.png") no-repeat;
     background-size: 100% 100%;
     box-sizing: border-box;
     width: 691rpx;
     height: 711rpx;
-    margin: 20% auto 0 auto;
+    /* margin: 20% auto 0 auto; */
     padding: 200rpx 110rpx 40rpx 110rpx;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-.msg-box > view .mas-box-herd >view:nth-child(1){
+.pops .mas-box-herd >view:nth-child(1){
     position: relative;
 }
-.msg-box .mas-box-herd{
+.pops .mas-box-herd{
 
 }
-.msg-box .mas-box-herd .progress{
+.pops .mas-box-herd .progress{
     background: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_30.png") no-repeat;
     background-size:466rpx 17rpx;
     height: 17rpx;
     width: 466rpx;
     position: relative;
 }
-.msg-box .mas-box-herd .progress view{
+.pops .mas-box-herd .progress view{
     background-image: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/Mycity/page24_331.png");
     background-size:466rpx 17rpx;
     background-position:left center;
@@ -189,33 +194,40 @@
     bottom: 0;
     left: 0;
 }
-.msg-box .mas-box-herd >view:nth-child(1) image{
+.pops .mas-box-herd >view:nth-child(1) image{
     position: absolute;
     right: 0;
     top: -12rpx;
     width: 32rpx;
     height: 32rpx;
 }
-.msg-box .mas-box-herd .date{
+.pops .mas-box-herd .date{
     padding-top: 10rpx;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.msg-box .mas-box-herd .date image{
+.pops .mas-box-herd .date image{
     width: 65rpx;
     height: 32rpx;
 }
-.msg-box .check-box{
+.pops .check-box{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.msg-box .check-box image{
+.pops .check-box image{
     width: 147rpx;
     height: 133rpx;
     margin-top: 10rpx;
+}
+.claim{
+  width: 258rpx;
+  position: absolute;
+  bottom: -160rpx;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .day-7{
     width: 100% !important;

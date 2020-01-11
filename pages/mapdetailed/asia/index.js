@@ -42,6 +42,7 @@ Page({
     },
     //移动事件
     passThrough({currentTarget}) {
+      let _this = this;
       if(this.data.repeat){
         this.data.repeat = false;
         const { inverted, key } = this.data;
@@ -70,7 +71,7 @@ Page({
         }
         this.setData({ key: currentTarget.dataset.index, indexs: dataIndex })
         //  如果选择的是第一关就把定时器的时间缩短
-        let times = dataIndex == key ? 50 : 1300;
+        let times = dataIndex == key ? 50 : 1500;
         let timer = setTimeout(() => { // 气球点亮延迟
           // this.setData({activeIndex: this.data.key})
           // 拿到登录状态
@@ -90,33 +91,36 @@ Page({
           //  获取下一题的题型  
           axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
             let ids = res.data.data.id;
-            if (res.data.data.typeid == 1) {
-              wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
-            } else if (res.data.data.typeid == 2) {
-              wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
-            } else if (res.data.data.typeid == 3) {
-              wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
-            } else if (res.data.data.typeid == 4) {
-              wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
-            } else if (res.data.data.typeid == 5) {
-              wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
-            } else if (res.data.data.typeid == 6) {
-              wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
-            } else if (res.data.data.typeid == 7) {
-              wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
-            } else if (res.data.data.typeid == 8) {
-              wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
-            } else if (res.data.data.typeid == 9) {
-              wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
-            } else if (res.data.data.typeid == 10) {
-              wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
-            } else if (res.data.data.typeid == 11) {
-              wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
-            } else if (res.data.data.typeid == 12) {
-              wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
+            _this.setData({datas:res.data.data})
+            if (!res.data.data.user.is_ball){ 
+              if (res.data.data.typeid == 1) {
+                wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
+              } else if (res.data.data.typeid == 2) {
+                wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
+              } else if (res.data.data.typeid == 3) {
+                wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
+              } else if (res.data.data.typeid == 4) {
+                wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
+              } else if (res.data.data.typeid == 5) {
+                wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
+              } else if (res.data.data.typeid == 6) {
+                wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
+              } else if (res.data.data.typeid == 7) {
+                wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
+              } else if (res.data.data.typeid == 8) {
+                wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
+              } else if (res.data.data.typeid == 9) {
+                wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
+              } else if (res.data.data.typeid == 10) {
+                wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
+              } else if (res.data.data.typeid == 11) {
+                wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
+              } else if (res.data.data.typeid == 12) {
+                wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
+              }
             }
           })
-          // wx.redirectTo({ url: '/pages/subject/nine/index?id=' + 2258 })
+          // wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + 4147 })
           this.data.repeat = true;
           clearTimeout(timer)
         }, times)
@@ -131,7 +135,7 @@ Page({
       let state = wx.getStorageSync('state');
       let _this = this;
       axios.post('Index/get_city', { rdSession: rdSession, state: state }).then(res => {
-        console.log("ressssss",res)
+        //console.log("ressssss",res)
         let width = res.data.data.num < 10 ? 560 : res.data.data.num < 19 ? 260 : 0;
         _this.setData({
           key: res.data.data.num - 1,
@@ -142,7 +146,7 @@ Page({
         if (options.ids > 0) {
           //  如果大于数组长度  就是最后一关
           if (options.ids <= res.data.data.list.length){
-            console.log('optionsssssssss',options.ids)
+            //console.log('optionsssssssss',options.ids)
             // 在本地存入答题分数
             wx.setStorageSync('score', 0);
             this.automatic(options.ids, res.data.data.list[options.ids].id)
@@ -156,7 +160,7 @@ Page({
       console.log('indexxxxxxxxx', index, cityId)
       const { inverted, key } = this.data
       let dataIndex = index
-      console.log("this.data.activeIndex", this.data.activeIndex, "dataIndex", dataIndex)
+      //console.log("this.data.activeIndex", this.data.activeIndex, "dataIndex", dataIndex)
       wx.setStorageSync('poindex', Number(dataIndex))
       if (dataIndex > this.data.activeIndex) {
         return;
@@ -165,13 +169,13 @@ Page({
         if (key === dataIndex) return //是否多次点击
       }
 
-      console.log('是否要正常砖头===》', inverted.includes(dataIndex), dataIndex - key)
+      //console.log('是否要正常砖头===》', inverted.includes(dataIndex), dataIndex - key)
       if (inverted.includes(dataIndex) && dataIndex - key === 1) { //判断是否需要转头,正常移动情况下
         this.setData({
           leftOrRightClass: 'position-left'
         })
       } else {
-        console.log('左右掉头=====》', dataIndex, '<', key)
+        ////console.log('左右掉头=====》', dataIndex, '<', key)
         if (dataIndex < key) { //判断不连续移动下的 左右移动 掉头操作
           this.setData({
             leftOrRightClass: 'position-left'
@@ -202,7 +206,7 @@ Page({
         this.audioCtx2.pause();
         //  获取下一题的题型  
         axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
-          console.log("ressssss", res)
+          //console.log("ressssss", res)
           let ids = res.data.data.id;
           if (res.data.data.typeid == 1) {
             wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })

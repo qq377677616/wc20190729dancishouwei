@@ -9,6 +9,7 @@ Page({
     pdTop:(index)=> {return [1,3,5].includes(index)},
     resourcesUrl: `${wx.getStorageSync("resourcesUrl")}/images/subject/one/`,
     isShow: true, //控制提示框显示
+    isX: false, //答题完显示星星
     isLetter:[],
     cityName:'',
     datas:{},
@@ -61,7 +62,7 @@ Page({
           })
           //  当选对的时候 循环判断其他选项的样式是否有红色的 如果有就变成正常的
           for (let i = 0; i < this.data.datas.answer.length; i++) {
-            console.log("(this.data.datas.answer", this.data.datas.answer);
+            //console.log("(this.data.datas.answer", this.data.datas.answer);
             let arr1 = 'datas.answer[' + i + '].isY'
             if (this.data.datas.answer[i].isY == 2) {
               _this.setData({
@@ -85,11 +86,14 @@ Page({
           // 把其他选错的答案还原
           for (let i = 0; i < this.data.datas.answer.length; i++) {
             let arr1 = 'datas.answer[' + i + '].isY'
-            if (this.data.datas.answer[i].isY == 2) {
-              _this.setData({
-                [arr1]: 0
-              })
-            }
+            _this.setData({
+              [arr1]: 0
+            })
+            // if (this.data.datas.answer[i].isY == 2) {
+            //   _this.setData({
+            //     [arr1]: 0
+            //   })
+            // }
           }
           this.setData({
             [arrs]: 2 // 答错给对应的选项赋值
@@ -116,6 +120,7 @@ Page({
             num++;
           }
         }
+        // console.log('nummmm', num, leng, arrs)
         if (num == leng) {
           for (let i = 0; i < arrs.length; i++) {
             let arr = 'answer[' + this.data.aindex + ']';
@@ -150,11 +155,14 @@ Page({
           // 把其他选错的答案还原
           for (let i = 0; i < this.data.datas.answer.length; i++) {
             let arr1 = 'datas.answer[' + i + '].isY'
-            if (this.data.datas.answer[i].isY == 2) {
-              _this.setData({
-                [arr1]: 0
-              })
-            }
+            _this.setData({
+              [arr1]: 0
+            })
+            // if (this.data.datas.answer[i].isY == 2) {
+            //   _this.setData({
+            //     [arr1]: 0
+            //   })
+            // }
           }
           let arr1 = 'datas.answer[' + index + '].isY'
           this.setData({
@@ -178,7 +186,7 @@ Page({
     let rdSession = wx.getStorageSync('rdSession');
     let data = this.data.datas;
     axios.post('Index/set_answer', { rdSession: rdSession, q_id: data.id, is_yes: is_yes, star: data.star, monsterid: data.user.monster.id }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
       if (res.data.code == 1) {
         //  拿到答题数
         let anumber = wx.getStorageSync('anumber');
@@ -186,12 +194,12 @@ Page({
         // 拿到答题分数
         let score = wx.getStorageSync('score') + this.data.datas.star;;
         wx.setStorageSync('score', score)
-        console.log('this.data.datas===>', this.data.datas)
+        //console.log('this.data.datas===>', this.data.datas)
         if (anumber >= this.data.datas.count) {
           console.log('该城市所有题目已答完');
           //  如果是最后一题 小怪兽就变成笑脸
           let str = 'datas.user.monster.is_last';
-          this.setData({ [str]: true });
+          this.setData({ [str]: true, isX: true });
           wx.redirectTo({
             url: '/pages/clearance/index',
           })
@@ -202,8 +210,9 @@ Page({
           let rdSession = wx.getStorageSync('rdSession');
           // 拿到当前点击的城市ID
           let cityId = wx.getStorageSync('cityId')
+          this.setData({ isX: true })
           axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
-            console.log('ressss',res)
+            //console.log('ressss',res)
             let ids = res.data.data.id;
             if (res.data.data.typeid == 1) {
               wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
@@ -246,9 +255,12 @@ Page({
     let cityId = wx.getStorageSync('cityId');
     axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId, id: options.id }).then(res => {
       console.log("ressssss", res)
+      // 在本地保存小怪兽图片 在闯关成功页面显示
+      wx.setStorageSync('monster', res.data.data.user.monster.yes_pic);
       //  获取怪兽血条数
       let lifebar = wx.getStorageSync('lifebar');
       let str = 'datas.user.monster.lifebar';
+      res.data.data.question.answer = res.data.data.question.answer.replace(/[ ]/g, '');
       _this.setData({
         datas: res.data.data,
         ['datas.cityName']: wx.getStorageSync('cityName'),
@@ -263,6 +275,7 @@ Page({
         })
       }
       for (let i = 0; i < res.data.data.answer.length; i++) {
+        _this.data.datas.answer[i].txt = _this.data.datas.answer[i].txt.replace(/[ ]/g, '');
         let arrs = 'datas.answer[' + i + '].isTip';
         _this.setData({
           [arrs]: false
@@ -281,7 +294,7 @@ Page({
     })
   },
   cane: function () {
-    console.log("取消");
+    //console.log("取消");
     this.setData({
       isShow: true
     })
@@ -294,7 +307,7 @@ Page({
     // 拿到登录状态
     let rdSession = wx.getStorageSync('rdSession');
     axios.post('Index/deduct_star', { rdSession: rdSession, star: 1 }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
       if (res.data.code == 1) {
         let str = this.data.datas.question.answer.split('');
         //  拿到上面选中的内容长度 当下标
@@ -326,7 +339,7 @@ Page({
           [arr]: _this.data.datas.user.star - 1
         })
       } else if (res.data.code == 301) {
-        console.log('星星数量不够')
+        //console.log('星星数量不够')
       }
     })
   },

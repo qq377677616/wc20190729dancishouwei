@@ -8,6 +8,7 @@ Page({
   data: {
     resourcesUrl: `${wx.getStorageSync("resourcesUrl")}/images/subject/one/`,
     isShow: true, //控制提示框显示
+    isX: false, //答题完显示星星
     anubmer: 0,
     users: {},
     cityName: '',
@@ -31,7 +32,9 @@ Page({
     // 拿到城市ID
     let cityId = wx.getStorageSync('cityId');
     axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId, id: options.id }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
+      // 在本地保存小怪兽图片 在闯关成功页面显示
+      wx.setStorageSync('monster', res.data.data.user.monster.yes_pic);
       //  获取怪兽血条数
       let lifebar = wx.getStorageSync('lifebar');
       let str = 'users.user.monster.lifebar';
@@ -54,12 +57,12 @@ Page({
         })
         
       }
-      console.log('thisssssssss',this.data.datas)
+      //console.log('thisssssssss',this.data.datas)
     })
   },
   select:function(e){
-    console.log("eeeeeeee",e);
-    console.log(this.data.datas)
+    //console.log("eeeeeeee",e);
+    //console.log(this.data.datas)
     let index = e.currentTarget.dataset.index;
     //  获取怪兽血条数
     let lifebar = wx.getStorageSync('lifebar');
@@ -68,7 +71,7 @@ Page({
     //   [check]: true
     // })
     if (this.data.snum < 3) {
-      console.log("data.slist", this.data.slist.length)
+      //console.log("data.slist", this.data.slist.length)
       //  如果保存的选项不超过6个 就可以一直选
       if (this.data.slist.length <= 6) {
         //  判断点击的是否是已经选中并且正确的  
@@ -84,7 +87,7 @@ Page({
               [check]: true
             })
             // this.data.datas[index].ischeck = true;
-            console.log("data.slist", this.data.slist)
+            //console.log("data.slist", this.data.slist)
           }
         }else{
           return ;
@@ -93,7 +96,7 @@ Page({
           if (this.data.slist[0] == this.data.slist[1]) {
             // 如果答对了  就snum+1
             this.data.snum++;
-            console.log("答对了111")
+            //console.log("答对了111")
             //  答对 播放音频
             this.audioCtx1.play();
             //  如果答对了 把其他答错的样式还原
@@ -173,7 +176,7 @@ Page({
     let data = this.data.datas;
     let _this = this;
     axios.post('Index/set_answer', { rdSession: rdSession, q_id: data.id, is_yes: is_yes, star: data.star, monsterid: _this.data.users.user.monsterid }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
       if (res.data.code == 1) {
         //  拿到答题数
         let anumber = wx.getStorageSync('anumber');
@@ -181,12 +184,12 @@ Page({
         // 拿到答题分数
         let score = wx.getStorageSync('score') + this.data.stars;
         wx.setStorageSync('score', score)
-        console.log('this.data.datas===>', this.data.datas)
+        //console.log('this.data.datas===>', this.data.datas)
         if (anumber >= this.data.datas.count) {
           console.log('该城市所有题目已答完');
           //  如果是最后一题 小怪兽就变成笑脸
           let str = 'datas.user.monster.is_last';
-          this.setData({ [str]: true });
+          this.setData({ [str]: true, isX: true });
           wx.redirectTo({
             url: '/pages/clearance/index',
           })
@@ -197,6 +200,7 @@ Page({
           let rdSession = wx.getStorageSync('rdSession');
           // 拿到当前点击的城市ID
           let cityId = wx.getStorageSync('cityId')
+          this.setData({ isX: true })
           axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
             let ids = res.data.data.id;
             if (res.data.data.typeid == 1) {
@@ -235,7 +239,7 @@ Page({
     })
   },
   cane: function () {
-    console.log("取消");
+    //console.log("取消");
     this.setData({
       isShow: true
     })
@@ -248,7 +252,7 @@ Page({
     // 拿到登录状态
     let rdSession = wx.getStorageSync('rdSession');
     axios.post('Index/deduct_star', { rdSession: rdSession, star: 1 }).then(res => {
-      console.log("ressssss", res)
+      //console.log("ressssss", res)
       if (res.data.code == 1) {
         let _this = this.data;
         let index = 0;
@@ -314,7 +318,7 @@ Page({
           }
         }
       } else if (res.data.code == 301) {
-        console.log('星星数量不够')
+        //console.log('星星数量不够')
       }
     })
   },

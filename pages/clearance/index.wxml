@@ -1,6 +1,8 @@
 <!--pages/clearance/index.wxml-->
 <view class="bg" style="background-image: url({{resourcesUrl}}page22_jpg.jpg)">
     <audio src="{{resourcesUrl}}rush.mp3" id="myAudios1" controls loop></audio>
+    <!-- 充值弹窗组件 -->
+    <member wx:if="{{datas.user.is_ball}}"></member>
     <!--  通告板  -->
     <view class="clearance-title">
         <image src="{{resourcesUrl}}page19_3.png" class="x1" mode="widthFix"></image>
@@ -29,7 +31,9 @@
         <!-- <image src="{{resourcesUrl}}page19_6.png" catchtap="recharge"></image> -->
     </view>
 </view>
-
+<view class="zhe" bindtap="close" hidden="{{isShows}}">
+  <image class="monster" src="{{monster}}" mode="widthFix" style="height:auto;"></image>
+</view>
 <!--    会员充值弹窗    -->
 <view class="dig-member" hidden="{{isShow}}">
     <view>

@@ -41,6 +41,7 @@
 .topic-box .topic-box-top .description{
     padding-left: 40rpx;
     width: 95rpx;
+    max-height: 170rpx;
     /* height: 110rpx; */
 }
 .descs{

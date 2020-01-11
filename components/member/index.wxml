@@ -7,17 +7,17 @@
   </view>
   <!--    会员充值弹窗    -->
   <view class="dig-member" hidden="{{isShow}}">
-      <view>
+      <view class="box">
           <image src="{{resourcesUrl}}page19_15.png"/>
-          <view class="description" wx:for="{{lists}}" wx:key="{{index}}">
-              <view>
-                  <image src="{{resourcesUrl}}{{memberList[index].icon}}.png"/>
-                  <text>{{!index?'permanent':item.time}}</text><image class="month" wx:if="{{index}}" src="{{resourcesUrl}}{{memberList[index].timer}}.png"/>
+          <view class="description" wx:for="{{lists}}" wx:key="index">
+              <view class="left">
+                <image style="height：auto;" mode="widthFix" src="{{resourcesUrl}}{{memberList[index].icon}}.png"/>
+                <text class="text">{{index=='3'?'permanent':item.time}}</text>
+                <image class="month" wx:if="{{index!=3}}" src="{{resourcesUrl}}{{memberList[index].timer}}.png"/>
               </view>
               <view class="btn" style="background-image:url({{resourcesUrl}}page19_19.png);background-size: cover" data-day='{{item.time}}' data-money="{{item.money}}" bindtap="play">
                 {{item.money}}
               </view>
-              <!-- <image src="{{resourcesUrl}}page19_19.png"/> -->
           </view>
       </view>
       <image src="{{resourcesUrl}}page19_25.png" catchtap="del"/>

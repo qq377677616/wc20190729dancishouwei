@@ -15,10 +15,10 @@ Component({
   data: {
     resourcesUrl: `${wx.getStorageSync("resourcesUrl")}/images/Mycity/`, //图片公共地址
     memberList: [
-      { icon: 'page19_22', timer: 'page19_18' },
-      { icon: 'page19_22', timer: 'page19_18' },
-      { icon: 'page19_23', timer: 'page19_18' },
-      { icon: 'page19_24', timer: 'page19_18' },
+      { icon: 'one', timer: 'page19_18' },
+      { icon: 'two', timer: 'page19_18' },
+      { icon: 'there', timer: 'page19_18' },
+      { icon: 'four', timer: 'page19_18' },
     ],
     lists: [{ time: 12, money: 0.01 }, { time: 6, money: 0.01 }, { time: 3, money: 0.01 }],
     isPlay: false,

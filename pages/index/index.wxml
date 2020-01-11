@@ -16,7 +16,7 @@
     <view>
         <image class="btn"
                wx:for="{{buttons}}"
-               wx:key="{{index}}"
+               wx:key="index"
                src="{{resourcesUrl}}{{item.icon}}.png"
                mode="widthFix"
                data-url="{{item.url}}" 

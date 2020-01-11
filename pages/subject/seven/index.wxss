@@ -117,9 +117,9 @@
   font-size: 36rpx;
 }
 .yes{
-  background: green !important;
+  background: #d1ff74 !important;
 }
 .no{
-  background: red !important;
+  background: #ed3c3e !important;
   color: #fff !important;
 }

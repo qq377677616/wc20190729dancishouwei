@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -24,7 +24,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
 	"appid": "wx8edcf72d0f76ad26",
-	"projectname": "%E5%8D%95%E8%AF%8D%E5%AE%88%E5%8D%AB",
+	"projectname": "wc20190729dancishouwei",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

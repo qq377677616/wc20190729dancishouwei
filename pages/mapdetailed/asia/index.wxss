@@ -34,7 +34,7 @@ image{
     left:50%;
     transform: translateX(-50%);
     bottom:50rpx;
-    z-index: 1001;
+    z-index: 9;
 }
 .aircraft{
     position: absolute;

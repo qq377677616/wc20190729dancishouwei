@@ -306,6 +306,9 @@ Page({
         } else {
           //  判断数据是否为空
           if (tRank.length) {
+            let temp = list1[1].avatarBg;
+            list1[1].avatarBg = list1[0].avatarBg;
+            list1[0].avatarBg = temp;
             list1[1].avatar = tRank[0].avatarurl;
             list1[1].name = tRank[0].nickname;
             list1[1].star = tRank[0].star;
@@ -450,8 +453,9 @@ Page({
      */
     onShareAppMessage: function () {
       return {
-        // title: '弹出分享时显示的分享标题',
+        title: '你收到好友赠送的5颗星能量哦。',
         // desc: '分享页面的内容',
+        imageUrl: this.data.resourcesUrl + 'shareImg.png',
         path: '/pages/Achievements/index?num=5&userid=' + wx.getStorageSync('rdSession') // 路径，传递参数到指定页面。
 
       }

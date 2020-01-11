@@ -139,3 +139,7 @@ scroll-view {
 .aircraft.position-5{left:425rpx;top:775rpx;}
 .aircraft.position-6{left:425rpx;top:965rpx;}
 .aircraft.position-7{left:365rpx;top:1055rpx;}
+.icons{
+  width: 110rpx !important;
+  margin-right: 0 !important;
+}

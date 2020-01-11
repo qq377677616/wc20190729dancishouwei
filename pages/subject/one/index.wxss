@@ -32,9 +32,9 @@
   position: relative;
 }
 .topic-box .top .description{
-  padding-left: 40rpx;
+  padding-left: 30rpx;
   width: 140rpx;
-  /* height: 160rpx; */
+  max-height: 240rpx !important;
 }
 .topic-box .top .air{
   text-align: center;
@@ -48,7 +48,7 @@
 }
 .topic-box .top .prompt{
   padding-left: 20rpx;
-  font-size: 80rpx;
+  font-size: 70rpx;
 }
 .topic-box .bt-footer{
   display: flex;
@@ -74,6 +74,7 @@
   left: 50%;
   color: #f73c44;
   transform: translate(-50%,-50%);
+  width: 100%;
 }
 
 
@@ -89,10 +90,10 @@
   bottom: 0;
 }
 .yes{
-  background: green !important;
+  background: #d1ff74 !important;
 }
 .no{
-  background: red !important;
+  background: #ed3c3e !important;
 }
 .no text{
   color: #fff !important;

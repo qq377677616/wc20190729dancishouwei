@@ -15,6 +15,9 @@ page{
 #myAudios2{
   display: none;
 }
+audio{
+  display: none;
+}
 .fake-authorization{
     position: fixed;
     top: 0;

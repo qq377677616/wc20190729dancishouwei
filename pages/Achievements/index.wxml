@@ -81,37 +81,37 @@
         <image class="save" src="{{resourcesUrl}}page1_6.png" bindtap="savePic" data-url=""/>
     </view>
     <!--     弹窗      -->
-    <view class="msg-box" hidden="{{!isShowCheckBox}}" bindtap="closes">
-        <!--    fadeShow 动画class    -->
-        <view class="fadeShow">
-            <view class="mas-box-herd">
-                <!--       进度条         -->
-                <view>
-                    <view class="progress">
-                        <view style="right: {{100 - (100 / 7 * progressNum)}}%"></view>
-                    </view>
-                    <image src="{{resourcesUrl}}page24_34.png"/>
-                </view>
-                <!--       日期icon        -->
-                <view class="date">
-                    <image src="{{resourcesUrl}}page24_31.png"/>
-                    <image src="{{resourcesUrl}}page24_32.png"/>
-                </view>
-            </view>
-            <!--      7 个日期签到box      -->
-            <view class="check-box">
-                <image class="{{index === 6 ? 'day-7' : ''}}" 
-                       src="{{resourcesUrl}}{{item.std?item.on:item.off}}.png"
-                       data-index="{{index}}"
-                       wx:for="{{checkList}}"
-                       wx:key="{{index}}"/> 
-            </view>
-        </view>
-        <!--    弹窗按钮    -->
-        <view class="achievements-btn">
-            <image src="{{resourcesUrl}}page24_15.png" bindtap="handCheck"/>
-        </view>
+    <view class="msg-box" hidden="{{!isShowCheckBox}}" bindtap="closes"></view>
+    <!--    fadeShow 动画class    -->
+    <view class="pops" hidden="{{!isShowCheckBox}}">
+      <view class="mas-box-herd">
+          <!--       进度条         -->
+          <view>
+              <view class="progress">
+                  <view style="right: {{100 - (100 / 7 * progressNum)}}%"></view>
+              </view>
+              <image src="{{resourcesUrl}}page24_34.png"/>
+          </view>
+          <!--       日期icon        -->
+          <view class="date">
+              <image src="{{resourcesUrl}}page24_31.png"/>
+              <image src="{{resourcesUrl}}page24_32.png"/>
+          </view>
+      </view>
+      <!--      7 个日期签到box      -->
+      <view class="check-box">
+          <image class="{{index === 6 ? 'day-7' : ''}}" 
+                  src="{{resourcesUrl}}{{item.std?item.on:item.off}}.png"
+                  data-index="{{index}}"
+                  wx:for="{{checkList}}" 
+                  wx:key="{{index}}"/> 
+      </view>
+      <!--    弹窗按钮    -->
+      <view class="achievements-btn claim">
+          <image src="{{resourcesUrl}}page24_15.png" bindtap="handCheck"/>
+      </view>
     </view>
+    
     <image class="myCanvas" mode="widthFix" src="{{ posterImgUrl }}"></image>
     <canvas canvas-id="myCanvas" id="myCanvas"></canvas> 
 </view>

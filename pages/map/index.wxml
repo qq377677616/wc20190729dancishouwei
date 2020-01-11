@@ -19,7 +19,7 @@
         <view class="ul">
             <view id="icon{{index+1}}" class="li {{point >= index+1 ? 'on' : ''}}"
                   wx:for="{{imgList}}"
-                  wx:key="{{index}}"
+                  wx:key="index"
                   bindtap="goToDetailed"
                   data-url="{{item.url}}"
                   data-name="{{item.zm}}"
@@ -34,6 +34,7 @@
         <!--    back按钮    -->
         <image class="back" style="height:auto;" src="{{resourcesUrl}}page2_12.png" mode="widthFix"
                bindtap="passThrough"/>
+      
       <!-- 首次进入弹窗 -->
       <view class="zhe" wx:if="{{isShow}}"></view>
       <view class="popup" wx:if="{{isShow}}">
