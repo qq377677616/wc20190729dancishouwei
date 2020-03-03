@@ -15,7 +15,7 @@
     <view class="topic-box">
         <view class="topic-box-bottom">
             <image src="{{datas.question.pic}}" mode="widthFix" data-url="{{datas.question.pic}}" bindtap="click"></image>
-            <view>
+            <view class="ff7408">
                 {{datas.question.txt}}
             </view>
         </view>

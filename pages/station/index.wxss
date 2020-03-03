@@ -176,14 +176,14 @@
 .message-Box > view .message-Box-herd{
     position: absolute;
     top: 60rpx;
-    width: 63%;
+    width: 83%;
     left: 50%;
     transform: translateX(-50%);
 }
 .message-Box > view .message-Box-herd view{
     display: flex;
     /* align-items: center; */
-    justify-content: space-between;
+    justify-content: center;
 }
 .message-Box > view .message-Box-herd view text{
     padding-bottom: 30rpx;
@@ -194,6 +194,7 @@
 .message-Box > view .message-Box-herd .xing{
     width: 40rpx;
     height: 40rpx;
+    padding: 0 10rpx;
 }
 .message-Box > view .message-Box-herd .shop{
     display: block;

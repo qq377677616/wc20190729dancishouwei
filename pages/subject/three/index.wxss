@@ -32,7 +32,7 @@
 .topic-box view text{
     position: absolute;
     font-size: 40rpx;
-    color: #f73c44;
+    color: #ff7408;
     display: block;
     left: 0;
     right: 0;

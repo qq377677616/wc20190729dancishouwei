@@ -20,7 +20,7 @@
     height: calc(25% - 40rpx);
     width: calc(100% - 40rpx);
     background-color: rgb(255, 209, 85);
-    color: #f73c44;
+    color: #ff7408;
     padding: 20rpx;
     box-sizing: border-box;
 }
@@ -53,11 +53,11 @@
     justify-content: center;
 }
 .topic-box .topic-box-bottom .air view{
-    color: #f73c44;
+    color: #ff7408;
     font-size: 40rpx;
     text-align: center;
     margin: 0 5rpx;
-    border-bottom:5rpx #f73c44 solid;
+    border-bottom:5rpx #ff7408 solid;
     width: 50rpx;
     height: 50rpx;
     line-height: 35rpx;
@@ -87,7 +87,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f73c44;
+    color: #ff7408;
 }
 .delete{
     flex: 1;
@@ -114,7 +114,7 @@
 }
 .isTip{
   font-weight: bold !important;
-  font-size: 36rpx;
+  font-size: 55rpx;
 }
 .yes{
   background: #d1ff74 !important;

@@ -50,7 +50,7 @@
     background-size: 100% 100%;
     text-align: center;
     line-height: 80rpx;
-    color: #f73c44;
+    color: #ff7408;
 }
 .topic-box .topic-box-content view view text{
     /*width: 20rpx;*/
@@ -70,7 +70,7 @@
     margin-bottom: 20rpx;
     padding: 20rpx;
     font-size: 24rpx;
-    color: #f73c44;
+    color: #ff7408;
     border-radius: 10rpx;
     background: white;
 }

@@ -27,7 +27,7 @@
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  color: #f73c44;
+  color: #ff7408;
 
   position: relative;
 }
@@ -40,7 +40,7 @@
   text-align: center;
   flex-shrink: 0;
   margin-left: 40rpx;
-  border-bottom:5rpx #f73c44 solid;
+  border-bottom:5rpx #ff7408 solid;
   width: 90rpx;
   height: 80rpx;
   line-height: 80rpx;
@@ -72,7 +72,7 @@
   position: absolute;
   top: 45%;
   left: 50%;
-  color: #f73c44;
+  color: #ff7408;
   transform: translate(-50%,-50%);
   width: 100%;
 }

@@ -56,7 +56,7 @@
 .topic-box .topic-box-bottom > view{
     text-align: center;
     font-size: 80rpx;
-    color: #f73c44;
+    color: #ff7408;
 }
 .tips{
   width: 575rpx;

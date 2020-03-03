@@ -103,6 +103,13 @@
     height: 28rpx;
 
 }
+.my-city-content ._box:first-child > image{
+    display: block;
+    margin: 0 auto;
+    padding-top: 10rpx;
+    width: 60rpx;
+    height: 28rpx;
+}
 .btns{
     padding-top: 30rpx;
 }

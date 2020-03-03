@@ -21,7 +21,7 @@
             <image class="description {{datas.question.answer.length>12?'descs':''}}" mode="widthFix" src="{{datas.question.pic}}" data-url="{{datas.question.pic}}" bindtap="click"></image>
             <!-- 显示选中的答案 -->
             <view class="air">
-                <view class="{{datas.question.answer.length>7?'afters':''}}" wx:for="{{answer}}" wx:key="{{index}}">{{item}}</view>
+                <view class="{{datas.question.answer.length>7?'afters':''}} ff7408" wx:for="{{answer}}" wx:key="{{index}}">{{item}}</view>
             </view>
             <view class="audio-cpt" catchtap="tmAudio">
                 <audio-cpt></audio-cpt>
@@ -31,7 +31,7 @@
         <view class="topic-box-bottom">
             <view wx:for="{{datas.answer}}" wx:key="{{index}}" class="" bindtap="selectLetter" data-index="{{index}}">
                 <view class="qiu {{public.twoClass(index)>= 0?'pd-top':''}} {{item.isY==1?'isY':item.isY==2?'isN':''}}">
-                    <text class="{{item.isTip?'font':''}}">{{item.txt}}</text>
+                    <text class="{{item.isTip?'font':''}} ff7408">{{item.txt}}</text>
                 </view>
                 <!-- <image data-index="{{index}}" catchtap="playAudio" src="{{resourcesUrl}}page7_5.png"></image> -->
             </view>

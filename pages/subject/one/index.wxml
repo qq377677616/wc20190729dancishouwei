@@ -18,14 +18,14 @@
         <view class="top">
             <image class="description" mode="widthFix" src="{{datas.question.pic}}" data-url="{{datas.question.pic}}" bindtap="click"></image>
             <!-- <text class="air">{{activeValue}}</text> -->
-            <text class="prompt">{{datas.question.txt}}</text> 
+            <text class="prompt ff7408">{{datas.question.txt}}</text> 
             <view class="audio-cpt" catchtap="tmAudio">
                 <audio-cpt></audio-cpt>
             </view>
         </view>
         <view class="bt-footer">
             <view class="{{item.isY==1?'yes':item.isY==2?'no':''}}" wx:for="{{datas.answer}}" data-index="{{index}}" catchtap="selectWord" data-value="{{item.pic}}" wx:key="item">
-                <text class="{{index == _index?'font':''}}">{{item.pic}}</text>
+                <text class="{{index == _index?'font':''}} ff7408">{{item.pic}}</text>
                 <view class="one-audio-cpt" data-index="{{index}}" catchtap="setAudioUrl">
                     <audio-cpt audioUrl="{{audioUrl}}"></audio-cpt>
                 </view>

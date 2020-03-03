@@ -5,7 +5,7 @@
 }
 .topic-box{
     width: calc(100% - 80rpx);
-    height: 560rpx;
+    height: 605rpx;
     background-color: white;
     border-radius: 20rpx;
     overflow: hidden;
@@ -49,11 +49,11 @@
     justify-content: center;
 }
 .topic-box .topic-box-bottom .air view{
-    color: #f73c44;
+    color: #ff7408;
     font-size: 40rpx;
     text-align: center;
     margin: 0 5rpx;
-    border-bottom:5rpx #f73c44 solid;
+    border-bottom:5rpx #ff7408 solid;
     width: 50rpx;
     height: 50rpx;
     box-sizing: border-box;
@@ -61,14 +61,14 @@
 
 
 .topic-box .topic-box-bottom > .select-btn{
-    width: 70%;
+    width: 90%;
     display: flex;
     margin: 0 auto;
     flex-wrap: wrap;
 }
 .topic-box .topic-box-bottom > .select-btn > view{
-    width: calc(100% / 4);
-    padding: calc(100% / 4) 0 0;
+    width: calc(100% / 6);
+    padding: calc(100% / 6) 0 0;
     position: relative;
 }
 .topic-box .topic-box-bottom > .select-btn > view >view {
@@ -83,7 +83,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f73c44;
+    color: #ff7408;
     background: #fff;
     border-radius: 10rpx;
 }

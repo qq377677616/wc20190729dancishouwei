@@ -142,8 +142,8 @@ Page({
                   wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
                 }
               }
-              
             })
+            // wx.redirectTo({ url: '/pages/subject/ten/index?id=' + 9755 })
             _this.data.repeat = true;
             clearTimeout(timer);
           }, times)

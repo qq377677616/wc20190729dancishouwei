@@ -61,6 +61,7 @@ Page({
       const { inverted, key } = this.data
       let _this = this;
       let dataIndex = currentTarget.dataset.index
+      wx.setStorageSync('poindex', dataIndex)
       if (dataIndex > this.data.activeIndex) {
         this.data.repeat = true;
         return;

@@ -45,6 +45,8 @@ Page({
         [str]: lifebar
       })
       // this.data.datas.cityName = wx.getStorageSync('cityName');
+      res.data.data.answer = res.data.data.answer.toLowerCase();
+      // console.log('res.data.data.answer', res.data.data.answer)
       for (let i = 0; i < res.data.data.answer.length; i++) {
         let answer = res.data.data.answer.split('');
         let arr = 'contents[' + i + ']';
@@ -222,9 +224,9 @@ Page({
             // [arrs]: arr[_this.sum],
             [arr1]: _this.datas.user.star - 1,
           })
-          //console.log(_this.arrs, 'ssssssssssssssssssssss')
-          for(let i=0;i<this.data.arrs.length;i++){
-            if (this.data.arrs[i] == arr[_this.sum]){
+          // console.log(_this.arrs, 'ssssssssssssssssssssss', arr[_this.sum])
+          for (let i = 0; i < _this.arrs.length;i++){
+            if (_this.arrs[i] == arr[_this.sum]){
               this.setData({ isTip: i})
             }
           }

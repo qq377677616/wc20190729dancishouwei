@@ -99,6 +99,7 @@ Page({
         cityList: res.data.data.list
       })
       
+      console.log('poindexxxxx', poindex, res.data.data.list.length)
       if (poindex > 0) {
         //  如果大于数组长度  就是最后一关
         if (poindex < res.data.data.list.length) {
@@ -107,6 +108,9 @@ Page({
           _this.linkAnswer(cityId, cityName);
         }else{
           tool.alert("当前大洲所有城市已通关！")
+          wx.navigateTo({
+            url: '/pages/map/index'
+          })
         }
       }
     }) 

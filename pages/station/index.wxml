@@ -80,9 +80,9 @@
             <!--      选中内容 提示      -->
             <view class="message-Box-herd">
                 <view>
-                    <text>User {{star}}</text>
+                    <text>Use {{star}}</text>
                     <image class="xing" src="{{resourcesUrl}}page20_20.png"></image> 
-                    <text>to help!</text>
+                    <text>to help.</text>
                 </view>
                 <image class="shop" src="{{isShowMsgBox.img}}"></image>
                 <!-- <view class="shop" style="background-image:url({{isShowMsgBox.img}});"></view> -->

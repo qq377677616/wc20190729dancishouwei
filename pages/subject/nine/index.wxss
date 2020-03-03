@@ -51,11 +51,11 @@ page{
     justify-content: center;
 }
 .topic-box .topic-box-top .air view{
-    color: #f73c44;
+    color: #ff7408;
     font-size: 40rpx;
     text-align: center;
     margin: 0 5rpx;
-    border-bottom:5rpx #f73c44 solid;
+    border-bottom:5rpx #ff7408 solid;
     width: 50rpx;
     height: 70rpx;
     line-height: 70rpx;
@@ -76,7 +76,7 @@ page{
     top: 50%;
     left: 0;
     right: 0;
-    color: #f73c44;
+    color: #ff7408;
     transform: translateY(-50%);
     text-align: center;
 }

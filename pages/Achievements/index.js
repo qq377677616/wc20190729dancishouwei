@@ -199,7 +199,7 @@ Page({
           progressNum = ret.data;
           if (std==2){
             tool.alert("签到成功")
-            this.setData({'userInfo.star':ret.data.star})
+            this.setData({ 'userInfo.star': ret.data.star, isShowCheckBox: false})
           }
         } else {
           axios.toast(ret.msg)

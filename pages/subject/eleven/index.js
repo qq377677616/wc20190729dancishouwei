@@ -19,7 +19,8 @@ Page({
     slist:[],
     indexs:[],
     arrs2:[],
-    datas: []
+    datas: [],
+    monsterid:'',
   },
 
   /**
@@ -43,6 +44,7 @@ Page({
         anubmer: res.data.data.count,
         datas: res.data.data.question,
         stars: res.data.data.star,
+        monsterid: res.data.data.user.monster.id,
         ['users.cityName']: wx.getStorageSync('cityName'),
         [str]: lifebar
       })
@@ -175,7 +177,7 @@ Page({
     let rdSession = wx.getStorageSync('rdSession');
     let data = this.data.datas;
     let _this = this;
-    axios.post('Index/set_answer', { rdSession: rdSession, q_id: data.id, is_yes: is_yes, star: data.star, monsterid: _this.data.users.user.monsterid }).then(res => {
+    axios.post('Index/set_answer', { rdSession: rdSession, q_id: data[0].id, is_yes: is_yes, star: _this.data.stars, monsterid: _this.data.monsterid }).then(res => {
       //console.log("ressssss", res)
       if (res.data.code == 1) {
         //  拿到答题数

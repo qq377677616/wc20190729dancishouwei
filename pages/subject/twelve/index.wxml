@@ -13,10 +13,10 @@
     </view> -->
     <view class="topic-box {{imgUrl?'margin_top':''}}">
         <view class="topic-box-top">
-            <!-- <view class="v1" wx:if="{{istip>0}}"><text>{{datas.hit[0]}}</text></view>
-            <view class="v2" wx:if="{{istip>1}}"><text>{{datas.hit[1]}}</text></view> -->
-            <view class="v1"><text>{{datas.hit[0]}}</text></view>
-            <view class="v2"><text>{{datas.hit[1]}}</text></view>
+            <view class="v1" wx:if="{{istip>0}}"><text>{{datas.hit[0]}}</text></view>
+            <view class="v2" wx:if="{{istip>1}}"><text>{{datas.hit[1]}}</text></view>
+            <!-- <view class="v1"><text>{{datas.hit[0]}}</text></view>
+            <view class="v2"><text>{{datas.hit[1]}}</text></view> -->
             <view class="audio-cpt" catchtap="playAudio">
                 <audio-cpt></audio-cpt>
             </view>
@@ -30,5 +30,5 @@
     <view class="tips">
       <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
     </view>
-    <!-- <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips> -->
+    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips>
 </view>

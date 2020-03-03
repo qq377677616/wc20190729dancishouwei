@@ -41,7 +41,7 @@
                 
                 <view class="_info">
                     <text>{{userInfo.nickname}}</text>
-                    <text wx:if="{{userInfo.type==2 || userInfo.type==2}}">Valid until:{{userInfo.expire_time}}</text> 
+                    <text wx:if="{{userInfo.type==2 || userInfo.type==2}}">Valid until:永久</text> 
                     <!-- <image class="mark" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}mark.png" bindtap="cat"></image> -->
                 </view>
             </view>

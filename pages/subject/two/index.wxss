@@ -54,13 +54,13 @@
     display: flex;
 }
 .topic-box .topic-box-top .air view{
-    color: #f73c44;
+    color: #ff7408;
     text-align: center;
     font-size: 40rpx;
     margin-left: 10rpx;
     /* font-size: 35rpx;
     margin-left: 4rpx; */
-    border-bottom:5rpx #f73c44 solid;
+    border-bottom:5rpx #ff7408 solid;
     width: 50rpx;
     /* width: 30rpx; */
     height: 60rpx;
@@ -115,7 +115,7 @@
     margin: 0 auto;
 }
 .topic-box .topic-box-bottom >view >view text{
-    color: #f73c44;
+    color: #ff7408;
     display: block;
     font-size: 30rpx;
     padding-top: 20rpx;

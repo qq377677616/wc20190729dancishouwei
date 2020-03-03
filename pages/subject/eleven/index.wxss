@@ -76,7 +76,7 @@
   padding: 0 30rpx;
   border-radius: 40rpx;
   text-align: center;
-  color: #f73c44;
+  color: #ff7408;
   font-size: 48rpx;
   letter-spacing: 2rpx;
   display: flex;

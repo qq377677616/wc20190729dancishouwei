@@ -11,10 +11,10 @@ Page({
     point: 1, // 已开通的大洲
     resourcesUrl: `${wx.getStorageSync("resourcesUrl")}/images/map/`, 
     imgList:[
-      { offIcon:'page2_5.png',onIcon:'page2_4.png', url:'/pages/mapdetailed/asia/index',zm:'ASIA'},
-      { offIcon: 'page2_11.png', onIcon: 'page2_10.png', url: '/pages/mapdetailed/europe/index', zm: 'EUROPE'},
-      { offIcon: 'page2_7.png', onIcon: 'page2_6.png', url: '/pages/mapdetailed/northamerica/index', zm: 'NORTH AMERICA'},
-      { offIcon: 'page2_9.png', onIcon: 'page2_8.png', url: '/pages/mapdetailed/africa/index', zm: 'AFRICA'},
+      { offIcon: 'locked.png',onIcon:'page2_4.png', url:'/pages/mapdetailed/asia/index',zm:'ASIA'},
+      { offIcon: 'locked.png', onIcon: 'page2_10.png', url: '/pages/mapdetailed/europe/index', zm: 'EUROPE'},
+      { offIcon: 'locked.png', onIcon: 'page2_6.png', url: '/pages/mapdetailed/northamerica/index', zm: 'NORTH AMERICA'},
+      { offIcon: 'locked.png', onIcon: 'page2_8.png', url: '/pages/mapdetailed/africa/index', zm: 'AFRICA'},
     ],
     datas:{},
     leftWidth: 240, // 当前页面默认滚动位置

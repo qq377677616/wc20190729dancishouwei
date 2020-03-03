@@ -120,7 +120,7 @@ Page({
               }
             }
           })
-          // wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + 4147 })
+          // wx.redirectTo({ url: '/pages/subject/ten/index?id=' + 9755 })
           this.data.repeat = true;
           clearTimeout(timer)
         }, times)

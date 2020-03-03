@@ -221,7 +221,7 @@
   z-index: 5;
 }
 .monster{
-  width: 200rpx;
+  width: 280rpx;
   position: fixed;
   top: 45%;
   left: 50%;

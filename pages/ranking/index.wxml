@@ -1,6 +1,6 @@
 <!--pages/ranking/index.wxml-->
 <view class="bg" style="background-image: url({{resourcesUrl}}page22_jpg.jpg)">
-    <image src="{{resourcesUrl}}{{activeStd?'page20_32.png':'page20_29.png'}}"></image>
+    <image src="{{resourcesUrl}}{{activeStd?'page20_32.png':user1.state==1?'page20_29.png':user1.state==2?'dz2.png':user1.state==3?'dz3.png':'dz4.png'}}"></image>
     <audio src="{{resourcesUrl}}rank.mp3" id="myAudios1" controls loop></audio>
     <view class="ranking-content">
         <!--    排行榜详细信息    -->

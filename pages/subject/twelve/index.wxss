@@ -25,7 +25,7 @@
     width: 590rpx;
     height: 220rpx;
     text-align: center;
-    color: #f73c44;
+    color: #ff7408;
     font-size: 38rpx;
     font-weight: bold;
     position: relative;
