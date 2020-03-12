@@ -211,35 +211,37 @@ Page({
           // 拿到当前点击的城市ID
           let cityId = wx.getStorageSync('cityId')
           this.setData({ isX: true })
-          axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
-            //console.log('ressss',res)
-            let ids = res.data.data.id;
-            if (res.data.data.typeid == 1) {
-              wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
-            } else if (res.data.data.typeid == 2) {
-              wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
-            } else if (res.data.data.typeid == 3) {
-              wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
-            } else if (res.data.data.typeid == 4) {
-              wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
-            } else if (res.data.data.typeid == 5) {
-              wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
-            } else if (res.data.data.typeid == 6) {
-              wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
-            } else if (res.data.data.typeid == 7) {
-              wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
-            } else if (res.data.data.typeid == 8) {
-              wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
-            } else if (res.data.data.typeid == 9) {
-              wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
-            } else if (res.data.data.typeid == 10) {
-              wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
-            } else if (res.data.data.typeid == 11) {
-              wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
-            } else if (res.data.data.typeid == 12) {
-              wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
-            }
-          })
+          setTimeout(() => {
+            axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
+              //console.log('ressss',res)
+              let ids = res.data.data.id;
+              if (res.data.data.typeid == 1) {
+                wx.reLaunch({ url: '/pages/subject/four/index?id=' + ids })
+              } else if (res.data.data.typeid == 2) {
+                wx.reLaunch({ url: '/pages/subject/one/index?id=' + ids })
+              } else if (res.data.data.typeid == 3) {
+                wx.reLaunch({ url: '/pages/subject/two/index?id=' + ids })
+              } else if (res.data.data.typeid == 4) {
+                wx.reLaunch({ url: '/pages/subject/eight/index?id=' + ids })
+              } else if (res.data.data.typeid == 5) {
+                wx.reLaunch({ url: '/pages/subject/eleven/index?id=' + ids })
+              } else if (res.data.data.typeid == 6) {
+                wx.reLaunch({ url: '/pages/subject/fives/index?id=' + ids })
+              } else if (res.data.data.typeid == 7) {
+                wx.reLaunch({ url: '/pages/subject/twelve/index?id=' + ids })
+              } else if (res.data.data.typeid == 8) {
+                wx.reLaunch({ url: '/pages/subject/six/index?id=' + ids })
+              } else if (res.data.data.typeid == 9) {
+                wx.reLaunch({ url: '/pages/subject/seven/index?id=' + ids })
+              } else if (res.data.data.typeid == 10) {
+                wx.reLaunch({ url: '/pages/subject/nine/index?id=' + ids })
+              } else if (res.data.data.typeid == 11) {
+                wx.reLaunch({ url: '/pages/subject/three/index?id=' + ids })
+              } else if (res.data.data.typeid == 12) {
+                wx.reLaunch({ url: '/pages/subject/ten/index?id=' + ids })
+              }
+            })
+          }, 800)
         }
       }
     })

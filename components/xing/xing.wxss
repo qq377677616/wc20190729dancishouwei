@@ -10,11 +10,14 @@
   top: 0;
   left: 0;
   z-index: 100;
-  animation: float5 1.8s;
+  opacity: 0;
+  animation: opa 1s;
+  animation-fill-mode: forwards;
 }
-@keyframes float5{
-  0%   {left: 0;}
-  100% {left: -100%;}
+@keyframes opa{
+  from   {opacity: 1;}
+  /* 60%  {opacity: 1} */
+  to {opacity: 0;}
 }
 .img image{
   max-width: 100%;

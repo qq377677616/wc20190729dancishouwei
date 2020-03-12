@@ -140,6 +140,7 @@ Page({
               }
             }
           })
+          
           _this.data.repeat = true;
           clearTimeout(timer);
         }, times)

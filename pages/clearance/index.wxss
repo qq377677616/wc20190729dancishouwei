@@ -229,6 +229,13 @@
   z-index: 10;
   animation: float1 .8s ease-in-out 1.7s infinite alternate;
 }
+.thank{
+  width: 75%;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
 @keyframes float1{
   0%   {transform:translate(-50%,-48%)}
   100% {transform:translate(-50%,-52%)}

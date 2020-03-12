@@ -57,7 +57,7 @@
                         </view>
                     </view>
                     <!--        彩色按钮        -->
-                    <image src="{{resourcesUrl}}{{item.is_type==1?'page22_10.png':'rebuild.png'}}"
+                    <image src="{{resourcesUrl}}page22_10.png"
                            bindtap="pleaseConfirm"
                            data-id="{{item.id}}"
                            data-index="{{index}}"

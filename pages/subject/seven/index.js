@@ -65,7 +65,7 @@ Page({
     let lifebar = wx.getStorageSync('lifebar');
     //  如果全部选项都填完就不走了
     if(_this.sum < _this.answer.length){
-      // //console.log("sssssssssssss", _this.lists[index], _this.answer[_this.sum], _this.sum)
+      // console.log("sssssssssssss", _this.lists[index], _this.answer[_this.sum], _this.sum)
       if (_this.lists[index] == _this.answer[_this.sum]) {
         //console.log("答对了")
         //  如果选对 把之前选错添加的效果去除
@@ -81,7 +81,7 @@ Page({
         let arrs = 'arrs[' + index + ']'
         this.setData({
           [arr]: _this.answer[_this.sum],
-          [arrs]: 1,
+          [arrs]: _this.lists[index],
           isTip: 100,
         })
         _this.sum++;
@@ -158,34 +158,37 @@ Page({
           // 拿到当前点击的城市ID
           let cityId = wx.getStorageSync('cityId')
           this.setData({ isX: true })
-          axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
-            let ids = res.data.data.id;
-            if (res.data.data.typeid == 1) {
-              wx.redirectTo({ url: '/pages/subject/four/index?id=' + ids })
-            } else if (res.data.data.typeid == 2) {
-              wx.redirectTo({ url: '/pages/subject/one/index?id=' + ids })
-            } else if (res.data.data.typeid == 3) {
-              wx.redirectTo({ url: '/pages/subject/two/index?id=' + ids })
-            } else if (res.data.data.typeid == 4) {
-              wx.redirectTo({ url: '/pages/subject/eight/index?id=' + ids })
-            } else if (res.data.data.typeid == 5) {
-              wx.redirectTo({ url: '/pages/subject/eleven/index?id=' + ids })
-            } else if (res.data.data.typeid == 6) {
-              wx.redirectTo({ url: '/pages/subject/fives/index?id=' + ids })
-            } else if (res.data.data.typeid == 7) {
-              wx.redirectTo({ url: '/pages/subject/twelve/index?id=' + ids })
-            } else if (res.data.data.typeid == 8) {
-              wx.redirectTo({ url: '/pages/subject/six/index?id=' + ids })
-            } else if (res.data.data.typeid == 9) {
-              wx.redirectTo({ url: '/pages/subject/seven/index?id=' + ids })
-            } else if (res.data.data.typeid == 10) {
-              wx.redirectTo({ url: '/pages/subject/nine/index?id=' + ids })
-            } else if (res.data.data.typeid == 11) {
-              wx.redirectTo({ url: '/pages/subject/three/index?id=' + ids })
-            } else if (res.data.data.typeid == 12) {
-              wx.redirectTo({ url: '/pages/subject/ten/index?id=' + ids })
-            }
-          })
+          setTimeout(() => {
+            axios.post('Index/get_question', { rdSession: rdSession, cityid: cityId }).then(res => {
+              let ids = res.data.data.id;
+              if (res.data.data.typeid == 1) {
+                wx.reLaunch({ url: '/pages/subject/four/index?id=' + ids })
+              } else if (res.data.data.typeid == 2) {
+                wx.reLaunch({ url: '/pages/subject/one/index?id=' + ids })
+              } else if (res.data.data.typeid == 3) {
+                wx.reLaunch({ url: '/pages/subject/two/index?id=' + ids })
+              } else if (res.data.data.typeid == 4) {
+                wx.reLaunch({ url: '/pages/subject/eight/index?id=' + ids })
+              } else if (res.data.data.typeid == 5) {
+                wx.reLaunch({ url: '/pages/subject/eleven/index?id=' + ids })
+              } else if (res.data.data.typeid == 6) {
+                wx.reLaunch({ url: '/pages/subject/fives/index?id=' + ids })
+              } else if (res.data.data.typeid == 7) {
+                wx.reLaunch({ url: '/pages/subject/twelve/index?id=' + ids })
+              } else if (res.data.data.typeid == 8) {
+                wx.reLaunch({ url: '/pages/subject/six/index?id=' + ids })
+              } else if (res.data.data.typeid == 9) {
+                wx.reLaunch({ url: '/pages/subject/seven/index?id=' + ids })
+              } else if (res.data.data.typeid == 10) {
+                wx.reLaunch({ url: '/pages/subject/nine/index?id=' + ids })
+              } else if (res.data.data.typeid == 11) {
+                wx.reLaunch({ url: '/pages/subject/three/index?id=' + ids })
+              } else if (res.data.data.typeid == 12) {
+                wx.reLaunch({ url: '/pages/subject/ten/index?id=' + ids })
+              }
+            })
+          },800)
+          
         }
       }
     })
@@ -224,7 +227,7 @@ Page({
             // [arrs]: arr[_this.sum],
             [arr1]: _this.datas.user.star - 1,
           })
-          // console.log(_this.arrs, 'ssssssssssssssssssssss', arr[_this.sum])
+          console.log(_this.arrs, 'ssssssssssssssssssssss', arr[_this.sum])
           for (let i = 0; i < _this.arrs.length;i++){
             if (_this.arrs[i] == arr[_this.sum]){
               this.setData({ isTip: i})
