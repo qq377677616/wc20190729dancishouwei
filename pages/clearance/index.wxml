@@ -33,7 +33,7 @@
 </view>
 <view class="zhe" bindtap="close" hidden="{{isShows}}">
   <image class="monster" src="{{monster}}" mode="widthFix" style="height:auto;"></image>
-  <image class="thank" src="{{resourcesUrl}}thank.png" mode="widthFix" style="height:auto;"></image>
+  <image class="thank" src="{{resourcesUrl}}thanks.png" mode="widthFix" style="height:auto;"></image>
 </view>
 <!--    会员充值弹窗    -->
 <view class="dig-member" hidden="{{isShow}}">
