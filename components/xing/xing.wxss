@@ -11,7 +11,7 @@
   left: 0;
   z-index: 100;
   opacity: 0;
-  animation: opa 1s;
+  animation: opa 1.5s;
   animation-fill-mode: forwards;
 }
 @keyframes opa{

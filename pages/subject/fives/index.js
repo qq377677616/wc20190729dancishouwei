@@ -208,7 +208,7 @@ Page({
                 wx.reLaunch({ url: '/pages/subject/ten/index?id=' + ids })
               }
             })
-          },800)
+          },1600)
           
         }
       }
