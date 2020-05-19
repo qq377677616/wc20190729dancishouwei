@@ -1,0 +1,5 @@
+<!--pages/login/login.wxml-->
+<view class="container body flex-cen">
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录授权</button>
+  <showModal container="{{showModal}}" bindoperation="operation"></showModal>
+</view>

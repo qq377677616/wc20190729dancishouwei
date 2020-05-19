@@ -1,0 +1,275 @@
+/* pages/decorate/north/index.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+.content{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.speed{
+  width: 520rpx;
+  position: relative;
+  top: 220rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.speed .cname{
+  width: 366rpx;
+}
+.speed .jindu{
+  width: 100%;
+  height: 18rpx !important;
+  position: absolute;
+  top: 70rpx;
+  left: 2%;
+}
+.speed .jindus{
+  width: 10%;
+  height: 18rpx !important;
+  position: absolute;
+  top: 70rpx;
+  left: 2%;
+  z-index: 1;
+}
+.per{
+  margin-top: 50rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-shadow: 1px 2px 1px #6195ef;
+  text-align: right;
+}
+.speed .completed{
+  width: 120rpx;
+  vertical-align: middle;
+}
+/* 云和飞行物 */
+.yun1{
+  width: 190rpx;
+  position: absolute;
+  top: 485rpx;
+  left: 0;
+  z-index: 1;
+}
+.yun2{
+  width: 125rpx;
+  position: absolute;
+  top: 375rpx;
+  right: 0;
+  z-index: 1;
+}
+.a45{
+  width: 146rpx;
+  position: absolute;
+  top: 455rpx;
+  left: 80rpx;
+}
+.a59{
+  width: 314rpx;
+  position: absolute;
+  top: 400rpx;
+  right: 99rpx;
+}
+/* 建筑 */
+.a50{
+  width: 330rpx;
+  position: absolute;
+  left: 0;
+  bottom: 240rpx;
+  z-index: 3;
+}
+.a56{
+  width: 200rpx;
+  position: absolute;
+  left: 0;
+  bottom: 240rpx;
+  z-index: 4;
+}
+.a47{
+  width: 40rpx;
+  position: absolute;
+  left: 95rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+.a48{
+  width: 245rpx;
+  position: absolute;
+  left: 77rpx;
+  bottom: 240rpx;
+  z-index: 2;
+}
+.a53{
+  width: 652rpx;
+  position: absolute;
+  left: 10rpx;
+  bottom: 240rpx;
+  z-index: 3;
+}
+.a49{
+  width: 245rpx;
+  position: absolute;
+  left: 266rpx;
+  bottom: 240rpx;
+  z-index: 2;
+}
+.a51{
+  width: 60rpx;
+  position: absolute;
+  left: 402rpx;
+  bottom: 240rpx;
+  z-index: 2;
+}
+.a46{
+  width: 267rpx;
+  position: absolute;
+  left: 393rpx;
+  bottom: 240rpx;
+  z-index: 1;
+}
+.a52{
+  width: 260rpx;
+  position: absolute;
+  left: 356rpx;
+  bottom: 240rpx;
+  z-index: 2;
+}
+.a55{
+  width: 128rpx;
+  position: absolute;
+  left: 494rpx;
+  bottom: 240rpx;
+  z-index: 4;
+}
+.a58{
+  width: 135rpx;
+  position: absolute;
+  right: 15rpx;
+  bottom: 240rpx;
+  z-index: 4;
+}
+.a54{
+  width: 41rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 240rpx;
+  z-index: 3;
+}
+/* 树植 */
+.l1{
+  width: 167rpx;
+  position: absolute;
+  left: 0;
+  bottom: 240rpx;
+  z-index: 5;
+}
+.a65{
+  width: 54rpx;
+  position: absolute;
+  left: 185rpx;
+  bottom: 240rpx;
+  z-index: 4;
+}
+.l3{
+  width: 220rpx;
+  position: absolute;
+  left: 295rpx;
+  bottom: 240rpx;
+  z-index: 5;
+}
+.a57{
+  width: 122rpx;
+  position: absolute;
+  left: 525rpx;
+  bottom: 240rpx;
+  z-index: 4;
+}
+.l5{
+  width: 66rpx;
+  position: absolute;
+  right: 59rpx;
+  bottom: 240rpx;
+  z-index: 5;
+}
+.l6{
+  width: 66rpx;
+  position: absolute;
+  right: 0;
+  bottom: 240rpx;
+  z-index: 5;
+}
+.a64{
+  width: 162rpx;
+  position: absolute;
+  left: 12rpx;
+  bottom: 240rpx;
+  z-index: 4;
+}
+/* 人物 */
+.a68{
+  width: 120rpx;
+  position: absolute;
+  left: 240rpx;
+  bottom: 220rpx;
+  z-index: 5;
+}
+.a66{
+  width: 65rpx;
+  position: absolute;
+  left: 400rpx;
+  bottom: 220rpx;
+  z-index: 5;
+}
+.a67{
+  width: 83rpx;
+  position: absolute;
+  left: 560rpx;
+  bottom: 212rpx;
+  z-index: 5;
+}
+/* 马路 */
+.footer{
+  width: 100%;
+  height: 240rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-size: cover;
+}
+.a60{
+  width: 105rpx;
+  position: absolute;
+  left: 42rpx;
+  bottom: 107rpx;
+  z-index: 5;
+}
+.a63{
+  width: 173rpx;
+  position: absolute;
+  left: 205rpx;
+  bottom: 20rpx;
+  z-index: 5;
+}
+.a61{
+  width: 145rpx;
+  position: absolute;
+  right: 185rpx;
+  bottom: 12rpx;
+  z-index: 5;
+}
+.a62{
+  width: 115rpx;
+  position: absolute;
+  right: 32rpx;
+  bottom: 102rpx;
+  z-index: 5;
+}
+.back{
+  width: 250rpx;
+  position: absolute;
+  top: 18rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}

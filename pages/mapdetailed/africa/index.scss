@@ -1,0 +1,98 @@
+scroll-view{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/map-africa/ouzhou.png") ;
+  background-size: cover;
+}
+.bg-img{
+  position: absolute;
+  width: 750rpx;
+  left: 0;
+  top: 180rpx;
+}
+.aircraft{
+  position: absolute;
+  width: 112rpx;
+  left: 180rpx;
+  top: 140rpx;
+}
+.ul{
+  view{
+    height: 40rpx;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    .icon{
+      width: 28rpx;
+      height: 35rpx;
+      padding-right: 10rpx;
+    }
+    .title{
+      height: 32rpx;
+    }
+  }
+}
+.li-0{
+  left: 90rpx;
+  top: 266rpx;
+  .title{
+    width: 238rpx;
+  }
+}
+.li-1{
+  left: 398rpx;
+  top: 327rpx;
+  .title{
+    width: 145rpx;
+  }
+}
+.li-2{
+  left: 62rpx;
+  top: 645rpx;
+  .title{
+    width: 148rpx;
+  }
+}
+.li-3{
+  left: 256rpx;
+  top: 605rpx;
+  .title{
+    width: 149rpx;
+    height: 39rpx !important;
+  }
+}
+.li-4{
+  left: 296rpx;
+  top: 815rpx;
+  .title{
+    width: 154rpx;
+    height: 39rpx !important;
+  }
+}
+.li-5{
+  left: 355rpx;
+  top: 895rpx;
+  .title{
+    width: 178rpx;
+  }
+}
+.li-6{
+  left: 310rpx;
+  top: 1075rpx;
+  .title{
+    width: 280rpx;
+    height: 39rpx !important;
+  }
+}
+
+.li-7{
+  left: 273rpx;
+  top: 1165rpx;
+  .title{
+    width: 235rpx;
+    height: 39rpx !important;
+  }
+}

@@ -1,0 +1,25 @@
+<!--components/topicHerd/index.wxml-->
+<view class="member" hidden="{{isShows}}">
+  <view class="zhe"></view>
+  <view class="popup">
+      <image class="img1" style="height:auto;" mode="widthFix" src="https://game.flyh5.cn/resources/game/wechat/szq/danci/images/subject/one/Join_now.png" bindtap="join_now"></image>
+      <image class="img2" style="height:auto;" mode="widthFix" src="https://game.flyh5.cn/resources/game/wechat/szq/danci/images/subject/one/remind.png" bindtap="canel"></image>
+  </view>
+  <!--    会员充值弹窗    -->
+  <view class="dig-member" hidden="{{isShow}}">
+      <view class="box">
+          <image src="{{resourcesUrl}}page19_15.png"/>
+          <view class="description" wx:for="{{lists}}" wx:key="index">
+              <view class="left">
+                <image style="height：auto;" mode="widthFix" src="{{resourcesUrl}}{{memberList[index].icon}}.png"/>
+                <text class="text">{{index=='3'?'permanent':item.time}}</text>
+                <image class="month" wx:if="{{index!=3}}" src="{{resourcesUrl}}{{memberList[index].timer}}.png"/>
+              </view>
+              <view class="btn" style="background-image:url({{resourcesUrl}}page19_19.png);background-size: cover" data-day='{{item.time}}' data-money="{{item.money}}" bindtap="play">
+                {{item.money}}
+              </view>
+          </view>
+      </view>
+      <image src="{{resourcesUrl}}page19_25.png" catchtap="del"/>
+  </view>
+</view>

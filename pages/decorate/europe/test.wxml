@@ -1,0 +1,50 @@
+<!--pages/decorate/europe/index.wxml-->
+<view class="content" style="background-image:url({{resourcesUrl}}europe.jpg)">
+  <view class="speed">
+    <image class="cname" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}ename.png"></image>
+    <image class="jindu" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}jindu.png"></image>
+    <image class="jindus" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}jindus.png"></image>
+    <view class="per">
+      10% <image class="completed" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}completed.png"></image>
+    </view>
+  </view>
+  <!-- 云和飞行物 -->
+  <image class="yun1" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}yun1.png"></image>
+  <image class="yun2" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}yun2.png"></image>
+  <image class="f1" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}f1.png"></image>
+  <image class="f2" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}f2.png"></image>
+
+  <!-- 建筑 -->
+  <image class="j1" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}j1.png"></image>
+  <image class="j2" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}j2.png"></image>
+  <image class="j3" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}j3.png"></image>
+  <image class="j4" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}j4.png"></image>
+  <image class="j5" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}j5.png"></image>
+  <image class="j6" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}j6.png"></image>
+  <image class="j7" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}j7.png"></image>
+  <!-- 树 -->
+  <image class="s1" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}shu.png"></image>
+  <image class="s2" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}shu.png"></image>
+  <image class="s3" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}shu.png"></image>
+  <image class="s4" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}shu.png"></image>
+  <!-- 两堆草 -->
+  <image class="cao1" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}cao1.png"></image>
+  <image class="cao2" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}cao2.png"></image>
+  <!-- 牛 -->
+  <image class="niu" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}niu.png"></image>
+  <!-- 球 -->
+  <image class="qiu" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}qiu.png"></image>
+  <!-- 人物 -->
+  <image class="r1" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}r1.png"></image>
+  <image class="r2" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}r2.png"></image>
+  <image class="r3" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}r3.png"></image>
+  <image class="r4" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}r4.png"></image>
+  <!-- 马路 -->
+  <view class="footer" style="background-image:url({{resourcesUrl}}ml.png)">
+    <image class="c1" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}c1.png"></image>
+    <image class="c2" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}c2.png"></image>
+    <image class="c3" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}c3.png"></image>
+    <image class="c4" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}c4.png"></image>
+    <image class="back" style="height:auto;" mode="widthFix" src="{{resourcesUrl}}back.png"></image>
+  </view>
+</view>

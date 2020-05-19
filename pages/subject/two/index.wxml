@@ -1,0 +1,45 @@
+<!--pages/subject/two/index.wxml-->
+<wxs src="../public.wxs" module="public" />
+
+<view class="two-bg" style='background-image: url("{{datas.city_pic}}")'>
+    <!-- 公共头部组件 -->
+    <topic-herd datas="{{datas}}"></topic-herd> 
+    <!-- 充值弹窗组件 -->
+    <!-- <member wx:if="{{datas.user.is_ball}}"></member> -->
+    <!-- 答题完成显示星星 -->
+    <xing wx:if="{{isX}}"></xing>
+    <!-- 答对答错音频播放 -->
+    <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+    <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <audio src="{{datas.question.muc}}" id="myAudio" controls></audio>
+    <audio src="{{item.muc}}" id="myAudio{{index}}" controls wx:for="{{datas.answer}}" wx:key="{{index}}"></audio>
+    <view class="boxs" bindtap="closes" wx:if="{{imgUrl}}">
+      <image mode="widthFix" style="height:auto;" src="{{imgUrl}}"></image>
+    </view>
+    <view class="topic-box">
+        <view class="topic-box-top">
+            <image class="description {{datas.question.answer.length>12?'descs':''}}" mode="widthFix" src="{{datas.question.pic}}" data-url="{{datas.question.pic}}" bindtap="click"></image>
+            <!-- 显示选中的答案 -->
+            <view class="air">
+                <view class="{{datas.question.answer.length>7?'afters':''}} ff7408" wx:for="{{answer}}" wx:key="{{index}}">{{item}}</view>
+            </view>
+            <view class="audio-cpt" catchtap="tmAudio">
+                <audio-cpt></audio-cpt>
+            </view>
+        </view>
+        <!-- 答案选项 -->
+        <view class="topic-box-bottom">
+            <view wx:for="{{datas.answer}}" wx:key="{{index}}" class="" bindtap="selectLetter" data-index="{{index}}">
+                <view class="qiu {{public.twoClass(index)>= 0?'pd-top':''}} {{item.isY==1?'isY':item.isY==2?'isN':''}}">
+                    <text class="{{item.isTip?'font':''}} ff7408">{{item.txt}}</text>
+                </view>
+                <!-- <image data-index="{{index}}" catchtap="playAudio" src="{{resourcesUrl}}page7_5.png"></image> -->
+            </view>
+        </view>
+    </view>
+    <view class="tips">
+      <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
+    </view>
+    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips>
+</view>
+

@@ -1,0 +1,34 @@
+<!--pages/subject/eight/index.wxml-->
+<view class="eight-bg" style='background-image: url("{{datas.city_pic}}")'>
+  <!-- 公共头部组件 -->
+  <topic-herd datas="{{datas}}"></topic-herd>
+  <!-- 充值弹窗组件 -->
+  <!-- <member wx:if="{{datas.user.is_ball}}"></member> -->
+  <!-- 答题完显示星星 -->
+  <xing wx:if="{{isX}}"></xing>
+  <!-- 答对答错音频播放 -->
+  <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+  <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+  <view class="boxs" bindtap="closes" wx:if="{{imgUrl}}">
+    <image mode="widthFix" style="height:auto;" src="{{imgUrl}}"></image>
+  </view>
+  <view class="topic-box">
+    <view class="topic-box-bottom">
+      <image src="{{datas.question.pic}}" mode="widthFix" data-url="{{datas.question.pic}}" bindtap="click"></image>
+      <view class="ff7408">
+        <!-- shopping centre -->
+        <!-- shopping centreshopping centre -->
+        {{datas.question.txt}}
+      </view>
+    </view>
+    <view class="topic-box-top">
+      <view class="{{tipcont=='Yes'?'font':''}} {{clist[0]==1?'yes':clist[0]==2?'no':''}}" bindtap='submit' data-index='0' data-name="Yes">Yes</view>
+      <view class="{{tipcont=='No'?'font':''}} {{clist[1]==1?'yes':clist[1]==2?'no':''}}" bindtap='submit' data-index='1' data-name="No">No</view>
+    </view>
+
+  </view>
+  <view class="tips">
+    <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
+  </view>
+  <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="2"></tips>
+</view>

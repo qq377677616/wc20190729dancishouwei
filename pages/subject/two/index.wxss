@@ -1,0 +1,179 @@
+/* pages/subject/two/index.wxss */
+.hide{
+    visibility:hidden
+}
+.two-bg{
+    background-size: 100% 100%;
+    height: 100vh;
+}
+#myAudio,#myAudio0,#myAudio1,#myAudio2,#myAudio3,#myAudio4,#myAudio5,#myAudio6{
+  display: none;
+}
+/* .yes{
+  background: green;
+}
+.no{
+  background: red;
+  color: #fff;
+} */
+.topic-box{
+    width: calc(100% - 80rpx);
+    height: 560rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1)
+}
+.topic-box .topic-box-top{
+    margin: 20rpx;
+    border-radius: 20rpx;
+    height: calc(40% - 40rpx);
+    width: calc(100% - 40rpx);
+    background-color: rgb(255, 209, 85);
+    display: flex;
+    align-items: center;
+    position: relative;
+    /*vertical-align: bottom;*/
+    /*vertical-align: bottom;*/
+}
+.topic-box .topic-box-top .description{
+    padding-left: 40rpx;
+    width: 95rpx;
+    max-height: 170rpx;
+    /* height: 110rpx; */
+}
+.descs{
+  padding-left: 20rpx !important;
+  width: 75rpx !important;
+}
+.topic-box .topic-box-top .air{ 
+    padding-top: 50rpx;
+    flex: 1;
+    display: flex;
+}
+.topic-box .topic-box-top .air view{
+    color: #ff7408;
+    text-align: center;
+    font-size: 40rpx;
+    margin-left: 10rpx;
+    /* font-size: 35rpx;
+    margin-left: 4rpx; */
+    border-bottom:5rpx #ff7408 solid;
+    width: 50rpx;
+    /* width: 30rpx; */
+    height: 60rpx;
+    line-height: 60rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+.afters{
+  font-size: 32rpx !important;
+  margin-left: 6rpx !important;
+  width: 28rpx !important;
+  height: 50rpx !important;
+  line-height: 50rpx !important;
+}
+.topic-box .topic-box-bottom{
+    border-radius: 20rpx;
+    margin: 20rpx;
+    height: calc(60% - 20rpx);
+    width: calc(100% - 40rpx);
+    background-color: rgb(255, 209, 85);
+    display: flex;
+    padding: 40rpx;
+    box-sizing: border-box;
+}
+.topic-box .topic-box-bottom >view{
+    width: calc(100% / 6);
+    position: relative;
+    /*padding: 40rpx;*/
+
+}
+.qiu{
+  background-image: url(https://game.flyh5.cn/resources/game/wechat/szq/danci/images/subject/one/page9_8.png);
+}
+.isY{
+  background-image: url(https://game.flyh5.cn/resources/game/wechat/szq/danci/images/subject/one/yes.png) !important;
+}
+.isY text{
+  color: #fff !important;
+}
+.isN{
+  background-image: url(https://game.flyh5.cn/resources/game/wechat/szq/danci/images/subject/one/no.png) !important;
+}
+.isN text{
+  color: #fff !important;
+}
+.topic-box .topic-box-bottom >view >view{
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 50%;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+.topic-box .topic-box-bottom >view >view text{
+    color: #ff7408;
+    display: block;
+    font-size: 30rpx;
+    padding-top: 20rpx;
+}
+.topic-box .topic-box-bottom >view image{
+    display: block;
+    width: 40rpx;
+    height: 40rpx;
+    margin: 0 auto;
+}
+.topic-box .topic-box-bottom .pd-top{
+    margin-top: 90rpx;
+   /*position: absolute;*/
+   /* bottom: 0;*/
+   /* width: 100%;*/
+}
+.audio-cpt{
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+}
+.tips{
+  width: 575rpx;
+  margin: 20rpx auto;
+  text-align: right;
+}
+.tips image{
+  width: 150rpx;
+  animation: floats 1.3s ease-in-out 2.7s infinite alternate;
+}
+@keyframes floats{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+.font{
+  font-size: 44rpx !important;
+  font-weight: bold;
+  padding-top: 10rpx !important;
+}
+.boxs{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: myfirst1 .4s;
+	animation-fill-mode: forwards;
+}
+.boxs image{
+  max-width: 90% !important;
+  max-height: 90% !important;
+}
+@keyframes myfirst1{
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}

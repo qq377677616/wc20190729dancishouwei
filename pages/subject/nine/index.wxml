@@ -1,0 +1,37 @@
+<!--pages/subject/nine/index.wxml-->
+<view class="nine-bg" style='background-image: url("{{datas.city_pic}}")'>
+    <!-- 公共头部组件 -->
+    <topic-herd datas="{{datas}}"></topic-herd> 
+    <!-- 充值弹窗组件 -->
+    <!-- <member wx:if="{{datas.user.is_ball}}"></member> -->
+    <!-- 答题完成显示星星 -->
+    <xing wx:if="{{isX}}"></xing>
+    <!-- 答对答错音频播放 -->
+    <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+    <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <!-- 答对所有选项播放音频 -->
+    <audio src="{{resourcesUrl}}all.mp3" id="myAudios3" controls></audio>
+    <view class="topic-box">
+        <view class="topic-box-top">
+            <view class="air">
+                <view wx:for="{{contents}}" wx:key="{{index}}">{{item}}</view>
+                <!-- <text>aa</text>
+                <text>aa</text>
+                <text>aa</text>
+                <text>aa</text>
+                <text>aa</text> -->
+            </view>
+        </view>
+        <view class="topic-box-tops">
+            <!--  -->
+            {{datas.theme}}
+        </view>
+        <view class="topic-box-bottom">
+            <view class="{{item.isY==1?'yes':item.isY==2?'no':item.isY==3?'display':''}}" wx:for="{{datas.answer}}" wx:key="{{index}}" data-index="{{index}}" bindtap="select"><text class="{{item.isTip?'font':''}}">{{item.word}}</text></view>
+        </view>
+    </view>
+    <view class="tips">
+      <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image>
+    </view>
+    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips>
+</view>

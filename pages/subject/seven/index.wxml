@@ -1,0 +1,34 @@
+<!--pages/subject/seven/index.wxml-->
+<view class="seven-bg" style='background-image: url("{{datas.city_pic}}")'>
+    <!-- 公共头部组件 -->
+    <topic-herd datas="{{datas}}"></topic-herd> 
+    <!-- 充值弹窗组件 -->
+    <!-- <member wx:if="{{datas.user.is_ball}}"></member> -->
+    <!-- 答题完成显示星星 -->
+    <xing wx:if="{{isX}}"></xing>
+    <!-- 答对答错音频播放 -->
+    <audio src="{{resourcesUrl}}yes.mp3" id="myAudios1" controls></audio>
+    <audio src="{{resourcesUrl}}no.mp3" id="myAudios2" controls></audio>
+    <view class="topic-box">
+        <view class="topic-box-top">
+            <text class="{{datas.question.length>40?'font28':''}}">{{datas.question}}</text>
+        </view>
+        <view class="topic-box-bottom">
+            <view class="air">
+                <view wx:for="{{contents}}" wx:key="{{index}}">{{item}}</view>
+            </view>
+            <view class="select-btn">
+                <view wx:for="{{lists}}" wx:key="{{index}}" data-index="{{index}}" bindtap="select">
+                    <view class="{{arrs[index]==1?'yes':arrs[index]==2?'no':''}} {{isTip==index?'isTip':''}}">{{item}}</view>
+                </view>
+                <view class="delete" bindtap="del">
+                    <view catchtap="del">Detele</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="tips">
+      <image mode="widthFix" src="{{resourcesUrl}}tips.png" bindtap="tips"></image> 
+    </view>
+    <tips bind:click="isTips" bind:clicks="cane" isShow="{{isShow}}" star="1"></tips>
+</view>

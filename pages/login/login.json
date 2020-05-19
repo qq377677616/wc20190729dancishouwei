@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "登录页",
+  "usingComponents": {
+    "showModal": "/components/showModal/showModal"
+  }
+}

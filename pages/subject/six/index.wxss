@@ -1,0 +1,141 @@
+/* pages/subject/six/index.wxss */
+.six-bg{
+    background-size: 100% 100%;
+    height: 100vh;
+}
+.topic-box{
+    width: calc(100% - 80rpx);
+    height: 605rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, .1)
+}
+.topic-box .topic-box-top{
+    display: flex;
+}
+.topic-box .topic-box-top view{
+    margin:20rpx 20rpx 0 20rpx;
+    border-radius: 20rpx;
+    padding: calc(100%/3 - 40rpx) 0 0;
+    /*height: calc(40% - 40rpx);*/
+    width: calc(100%/3 - 40rpx);
+    background-color: rgb(255, 209, 85);
+    position: relative;
+}
+.topic-box .topic-box-top view image{
+    position: absolute;
+    width: 100rpx;
+    max-height: 160rpx !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.topic-box .topic-box-bottom{
+    border-radius: 20rpx;
+    margin: 20rpx;
+    height: calc(60% - 5rpx);
+    width: calc(100% - 40rpx);
+    background-color: rgb(255, 209, 85);
+}
+
+.topic-box .topic-box-bottom .air{
+    padding: 30rpx 0;
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.topic-box .topic-box-bottom .air view{
+    color: #ff7408;
+    font-size: 40rpx;
+    text-align: center;
+    margin: 0 5rpx;
+    border-bottom:5rpx #ff7408 solid;
+    width: 50rpx;
+    height: 50rpx;
+    box-sizing: border-box;
+}
+
+
+.topic-box .topic-box-bottom > .select-btn{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.topic-box .topic-box-bottom > .select-btn > view{
+    width: calc(100% / 6);
+    padding: calc(100% / 6) 0 0;
+    position: relative;
+}
+.topic-box .topic-box-bottom > .select-btn > view >view {
+    position: absolute;
+    /* background-image: url("https://flynew.oss-cn-hangzhou.aliyuncs.com/game/wechat/szq/danci/images/subject/one/page11_4.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; */
+    top: 20rpx;
+    right: 20rpx;
+    left: 20rpx;
+    bottom: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff7408;
+    background: #fff;
+    border-radius: 10rpx;
+}
+.tips{
+  width: 575rpx;
+  margin: 20rpx auto;
+  text-align: right;
+}
+.tips image{
+  width: 150rpx;
+  animation: floats 1.3s ease-in-out 2.7s infinite alternate;
+}
+@keyframes floats{
+  0%   {transform:translate(0,0px)}
+  100% {transform:translate(0,10rpx)}
+}
+/* .tran{
+  transform: scale(1.3);
+} */
+.isTip{
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.font{
+  font-size: 85rpx !important;
+}
+.yes{
+  background: #d1ff74 !important;
+}
+.no{
+  background: #ed3c3e !important;
+  color: #fff !important;
+}
+.boxs{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: myfirst1 .4s;
+	animation-fill-mode: forwards;
+}
+.boxs image{
+  max-width: 90% !important;
+  max-height: 90% !important;
+}
+@keyframes myfirst1{
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
