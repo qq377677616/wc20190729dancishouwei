@@ -1,2 +1,0 @@
-<!--components/audiocpt/index.wxml-->
-<image class="audio" src="{{resourcesUrl}}page7_5.png"></image>

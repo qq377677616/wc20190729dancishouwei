@@ -1,7 +1,0 @@
-<!--components/showLoading/showLoading.wxml-->
-<view class="showLoading">
-  <view class="box">
-    <image src="./loading.gif" mode="widthFix"></image>
-    <view class="text">{{loadingText}}</view>
-  </view>
-</view>
